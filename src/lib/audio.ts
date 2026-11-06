@@ -1,18 +1,11 @@
 import { Capacitor } from '@capacitor/core';
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
 
-/** Speaks Japanese with the device voice. Resolves false when no Japanese voice exists. */
-export async function speak(text: string): Promise<boolean> {
-  if (Capacitor.isNativePlatform()) {
-    try {
-      await TextToSpeech.speak({ text, lang: 'ja-JP', rate: 0.9 });
-      return true;
-    } catch {
-      return false;
-    }
-  }
+export const SLOW = 0.6;
+
+async function webVoice() {
   const synth = window.speechSynthesis;
-  if (!synth) return false;
+  if (!synth) return undefined;
   let voices = synth.getVoices();
   if (!voices.length) {
     await new Promise((r) => {
@@ -21,13 +14,39 @@ export async function speak(text: string): Promise<boolean> {
     });
     voices = synth.getVoices();
   }
-  const voice = voices.find((v) => v.lang.toLowerCase().startsWith('ja'));
+  return voices.find((v) => v.lang.toLowerCase().startsWith('ja'));
+}
+
+/** True when this device can speak Japanese. */
+export async function hasVoice(): Promise<boolean> {
+  if (Capacitor.isNativePlatform()) {
+    try {
+      return (await TextToSpeech.isLanguageSupported({ lang: 'ja-JP' })).supported;
+    } catch {
+      return false;
+    }
+  }
+  return !!(await webVoice());
+}
+
+/** Speaks Japanese with the device voice. Resolves false when no Japanese voice exists. */
+export async function speak(text: string, rate = 0.9): Promise<boolean> {
+  if (Capacitor.isNativePlatform()) {
+    try {
+      await TextToSpeech.speak({ text, lang: 'ja-JP', rate });
+      return true;
+    } catch {
+      return false;
+    }
+  }
+  const voice = await webVoice();
   if (!voice) return false;
+  const synth = window.speechSynthesis;
   synth.cancel();
   const u = new SpeechSynthesisUtterance(text);
   u.lang = 'ja-JP';
   u.voice = voice;
-  u.rate = 0.9;
+  u.rate = rate;
   synth.speak(u);
   return true;
 }

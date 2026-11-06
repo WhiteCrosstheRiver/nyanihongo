@@ -8,6 +8,8 @@ const LESSONS: { to: string; icon: string; title: Key; desc?: Key; color: string
   { to: 'words', icon: '🍙', title: 'words', color: 'peach', jp: 'ことば' },
   { to: 'picture', icon: '🖼️', title: 'pictureQuiz', color: 'mint', jp: 'えあわせ' },
   { to: 'verbs', icon: '🐾', title: 'verbs', color: 'lav', jp: 'どうし' },
+  { to: 'grammar', icon: '🧩', title: 'grammar', color: 'peach', jp: 'ぶんぽう' },
+  { to: 'listen', icon: '🎧', title: 'listen', color: 'mint', jp: 'ききとり' },
   { to: 'camera', icon: '📷', title: 'camera', color: 'sky', jp: 'カメラ' },
   { to: 'read', icon: '📖', title: 'read', color: 'lemon', jp: 'よみもの' },
 ];
@@ -19,6 +21,7 @@ export function Home({ go }: { go: Nav }) {
   const streak = streakOf(p.days);
   const now = Date.now();
   const due = Object.values(p.cards).filter((c) => c.due <= now).length;
+  const doneToday = p.dailyDate === dayKey();
   return (
     <div className="home">
       <section className="hero card">
@@ -28,6 +31,14 @@ export function Home({ go }: { go: Nav }) {
           <p lang="ja" className="jp-sub">にゃんにほんご</p>
         </div>
       </section>
+      <button className={`daily card ${doneToday ? 'done' : ''}`} onClick={() => go('daily')}>
+        <span className="emoji-mid">{doneToday ? '🎉' : '🎒'}</span>
+        <span className="daily-text">
+          <b>{doneToday ? t('dailyDone') : t('daily')}</b>
+          <small>{t('dailyDesc')}</small>
+        </span>
+        <span className="btn small">{doneToday ? t('dailyAgain') : t('dailyStart')}</span>
+      </button>
       <section className="stats">
         <div className="card stat"><span className="stat-n">🔥 {streak}</span><span>{t('streak')}</span></div>
         <div className="card stat goal">

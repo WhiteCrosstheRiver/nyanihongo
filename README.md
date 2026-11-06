@@ -1,6 +1,6 @@
 # Nyanihongo
 
-A kawaii Japanese-learning app for Android, Windows and the web, with the UI in English, French, Spanish and Simplified Chinese. All data stays on the device.
+A kawaii Japanese-learning app for Android, Windows and the web, with the UI in English, French, Spanish and Simplified Chinese. All data stays on the device, and every feature works with no connection.
 
 ## Commands
 
@@ -17,6 +17,10 @@ The tools live in `%LOCALAPPDATA%\DevTools` (`node`, `jdk`, `android-sdk`). Node
 ## Layout
 
 - `src/lib/conjugate.ts`: verb conjugation engine, covered by `conjugate.test.ts`
+- `src/lib/adjectives.ts`: adjective forms
+- `src/lib/daily.ts`: builds the daily lesson from reviews and recent mistakes
+- `src/lib/backup.ts`: progress export and import
+- `scripts/sw.template.js`: offline cache for the web version; `vite.config.ts` fills in its file list
 - `src/lib/i18n.ts`: interface text; add a language here and to the data files
 - `src/data/`: vocabulary, verbs, forms, stories and the ImageNet-to-word map (`recognition.ts`)
 - `src/screens/`: one file per section
@@ -25,6 +29,10 @@ The tools live in `%LOCALAPPDATA%\DevTools` (`node`, `jdk`, `android-sdk`). Node
 - `public/models/mobilenet/`: offline image model
 
 Regenerate icons with `npm i --no-save @resvg/resvg-js && node scripts/make-icons.cjs`.
+
+## Offline
+
+Windows and Android carry all data inside the app. The web version (`dist`, served over HTTPS) can be installed from the browser: it saves the app shell first, then downloads the fonts and image model in the background and resumes after a dropped connection. Audio always uses the device's own Japanese voice.
 
 ## Licences of bundled data
 

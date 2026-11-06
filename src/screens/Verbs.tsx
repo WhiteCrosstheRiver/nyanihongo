@@ -15,9 +15,9 @@ const EXAMPLES = ['書く', '食べる', 'する', '来る'];
 const TOTAL = 10;
 
 interface Setup { forms: Form[]; classes: VerbClass[]; exercises: Ex[] }
-interface Item { ex: Ex; verb: VerbEntry; form: Form }
+export interface VerbItem { ex: Ex; verb: VerbEntry; form: Form }
 
-function makeItems(s: Setup): Item[] {
+function makeItems(s: Setup): VerbItem[] {
   const verbs = VERBS.filter((v) => s.classes.includes(v.cls));
   const framed = s.forms.filter((f) => FRAMES[f]);
   const frameVerbs = verbs.filter((v) => FRAME_VERBS.includes(v.word));
@@ -93,7 +93,7 @@ function Practice({ setup, onExit }: { setup: Setup; onExit: () => void }) {
     <div>
       <Header title={t('verbPractice')} onBack={onExit} />
       <Quiz total={TOTAL} onExit={onExit} onReset={() => setSeed((s) => s + 1)}
-        render={(i, api) => <VerbQ key={`${seed}-${i}`} item={items[i]} setup={setup} api={api} />} />
+        render={(i, api) => <VerbQ key={`${seed}-${i}`} item={items[i]} api={api} />} />
     </div>
   );
 }
@@ -108,13 +108,13 @@ function VerbBadge({ verb }: { verb: VerbEntry }) {
   );
 }
 
-function VerbQ({ item, setup, api }: { item: Item; setup: Setup; api: QuizApi }) {
+export function VerbQ({ item, api }: { item: VerbItem; api: QuizApi }) {
   const { t, lang } = useT();
-  const { score } = useStore();
+  const { score, track } = useStore();
   const { ex, verb, form } = item;
   const c = conjugate(verb, form)!;
   const info = FORM_INFO[form];
-  const done = (ok: boolean) => { score('verbs', ok, form); speak(c.kana); };
+  const done = (ok: boolean) => { score('verbs', ok, form); track(`form:${form}`, ok); speak(c.kana); };
   const others = useMemo(() => shuffle(FORMS.filter((f) => f !== form)).map((f) => conjugate(verb, f)).filter(Boolean) as NonNullable<typeof c>[], [verb, form]);
 
   const options = useMemo(() => {

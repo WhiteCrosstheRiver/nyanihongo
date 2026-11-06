@@ -1,7 +1,69 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { makeBackup, parseBackup, saveBackup } from '../lib/backup';
 import { LANGS, LANG_NAMES, useT, type Lang } from '../lib/i18n';
-import { STICKERS, useStore } from '../lib/store';
+import { useOffline } from '../lib/offline';
+import { STICKERS, dayKey, initial, useStore, type Progress as Saved } from '../lib/store';
 import { Header, Progress } from '../ui/parts';
+
+function OfflineCard() {
+  const { t } = useT();
+  const s = useOffline();
+  return (
+    <div className="card offline">
+      {s.state === 'builtin' && <p>✅ {t('offlineBuiltIn')}</p>}
+      {s.state === 'ready' && <p>✅ {t('offlineReady')}</p>}
+      {s.state === 'none' && <p>{t('offlineNone')}</p>}
+      {s.state === 'saving' && <>
+        <p>{s.failed ? t('offlineWaiting') : t('offlineSaving')} · {s.percent}%</p>
+        <Progress value={s.percent} max={100} />
+      </>}
+    </div>
+  );
+}
+
+function BackupCard() {
+  const { t } = useT();
+  const { p, restore } = useStore();
+  const [message, setMessage] = useState('');
+  const [pending, setPending] = useState<Saved | null>(null);
+  const file = useRef<HTMLInputElement>(null);
+
+  const save = async () => {
+    try {
+      await saveBackup(makeBackup(p), `nyanihongo-backup-${dayKey()}.json`);
+      setMessage(t('backupSaved'));
+    } catch (e) {
+      console.error(e);
+      setMessage(t('backupFailed'));
+    }
+  };
+  const open = async (f?: File) => {
+    if (!f) return;
+    const parsed = parseBackup(await f.text(), initial());
+    setPending(parsed);
+    setMessage(parsed ? '' : t('backupBad'));
+  };
+  return (
+    <div className="card settings">
+      <p className="note">{t('backupHint')}</p>
+      <div className="row">
+        <button className="btn ghost" onClick={save}>💾 {t('backupSave')}</button>
+        <button className="btn ghost" onClick={() => file.current?.click()}>📂 {t('backupLoad')}</button>
+        <input ref={file} data-testid="backup" type="file" hidden onChange={(e) => { open(e.target.files?.[0]); e.target.value = ''; }} />
+      </div>
+      {pending && (
+        <div role="alert">
+          <p>{t('backupConfirm')} ({Object.keys(pending.cards).length} {t('wordsLearned')})</p>
+          <div className="row">
+            <button className="btn danger" onClick={() => { restore(pending); setPending(null); setMessage(t('restored')); }}>{t('backupReplace')}</button>
+            <button className="btn ghost" onClick={() => setPending(null)}>{t('cancel')}</button>
+          </div>
+        </div>
+      )}
+      {message && <p className="note" role="status">{message}</p>}
+    </div>
+  );
+}
 
 export function MeScreen() {
   const { t } = useT();
@@ -57,6 +119,10 @@ export function MeScreen() {
               if (confirming) { reset(); setConfirming(false); } else setConfirming(true);
             }}>{confirming ? t('resetConfirm') : t('reset')}</button>
           </div>
+          <h2>{t('backupTitle')}</h2>
+          <BackupCard />
+          <h2>{t('offlineTitle')}</h2>
+          <OfflineCard />
           <h2>{t('credits')}</h2>
           <div className="card credits">
             <p>Kana stroke data: KanjiVG, © Ulrich Apel and contributors, CC BY-SA 3.0.</p>

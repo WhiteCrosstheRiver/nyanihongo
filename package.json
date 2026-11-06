@@ -1,7 +1,7 @@
 {
   "name": "nyanihongo",
   "productName": "Nyanihongo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "description": "A kawaii Japanese-learning app",
@@ -21,6 +21,8 @@
     "@capacitor/android": "^8.6.0",
     "@capacitor/cli": "^8.6.0",
     "@capacitor/core": "^8.6.0",
+    "@capacitor/filesystem": "^8.1.5",
+    "@capacitor/share": "^8.0.3",
     "@fontsource/zen-maru-gothic": "^5.3.1",
     "@tensorflow/tfjs": "^4.22.0",
     "@types/react": "^19.3.0",
@@ -63,6 +65,13 @@
       "perMachine": false,
       "allowToChangeInstallationDirectory": true,
       "artifactName": "Nyanihongo-Setup-${version}.exe"
-    }
+    },
+    "electronLanguages": [
+      "en-US",
+      "fr",
+      "es",
+      "zh-CN",
+      "ja"
+    ]
   }
 }

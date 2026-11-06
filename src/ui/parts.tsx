@@ -1,8 +1,10 @@
-import { useMemo, useRef, useState, type ReactNode } from 'react';
-import { speak, chime } from '../lib/audio';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { chime, hasVoice, speak } from '../lib/audio';
 import { useT } from '../lib/i18n';
 import { useStore } from '../lib/store';
 import { romajiToKana } from '../lib/romaji';
+
+export { pick, shuffle } from '../lib/random';
 
 export type Mood = 'idle' | 'happy' | 'sad' | 'think' | 'sleep';
 
@@ -46,6 +48,19 @@ export function Ruby({ text }: { text: string }) {
 }
 
 export const plainKana = (text: string) => text.replace(/\{[^|]+\|([^}]+)\}/g, '$1');
+/** Keeps the kanji, so a voice reads は and へ as particles and gets readings right. */
+export const plainWritten = (text: string) => text.replace(/\{([^|]+)\|[^}]+\}/g, '$1');
+
+/** null until known. */
+export function useVoice() {
+  const [voice, setVoice] = useState<boolean | null>(null);
+  useEffect(() => {
+    let live = true;
+    hasVoice().then((v) => { if (live) setVoice(v); });
+    return () => { live = false; };
+  }, []);
+  return voice;
+}
 
 export function SpeakButton({ text }: { text: string }) {
   const { t } = useT();
@@ -83,11 +98,13 @@ export function Confetti() {
 export interface QuizApi { answer: (ok: boolean) => void; next: () => void; answered: boolean; correct: boolean | null }
 
 /** Runs a fixed-length quiz: progress, mascot reactions, score screen. */
-export function Quiz({ total, onExit, render, onReset }: {
+export function Quiz({ total, onExit, render, onReset, onComplete, once }: {
   total: number;
   onExit: () => void;
   render: (index: number, api: QuizApi) => ReactNode;
   onReset?: () => void;
+  onComplete?: () => void;
+  once?: boolean; // no "play again" button
 }) {
   const { t } = useT();
   const { p } = useStore();
@@ -110,7 +127,10 @@ export function Quiz({ total, onExit, render, onReset }: {
     next: () => { locked.current = false; setCorrect(null); setI((n) => n + 1); },
   };
 
-  if (i >= total) {
+  const finished = i >= total;
+  useEffect(() => { if (finished) onComplete?.(); }, [finished]);
+
+  if (finished) {
     const good = score >= total * 0.7;
     return (
       <div className="result card pop">
@@ -119,7 +139,7 @@ export function Quiz({ total, onExit, render, onReset }: {
         <h2>{good ? t('niceJob') : t('keepGoing')}</h2>
         <p className="big">{t('score')}: {score} / {total}</p>
         <div className="row center">
-          <button className="btn" onClick={() => { locked.current = false; setI(0); setScore(0); setCorrect(null); setRound((r) => r + 1); onReset?.(); }}>{t('again2')}</button>
+          {!once && <button className="btn" onClick={() => { locked.current = false; setI(0); setScore(0); setCorrect(null); setRound((r) => r + 1); onReset?.(); }}>{t('again2')}</button>}
           <button className="btn ghost" onClick={onExit}>{t('finish')}</button>
         </div>
       </div>
@@ -193,12 +213,3 @@ export function KanaInput({ onSubmit, disabled, placeholder }: { onSubmit: (v: s
   );
 }
 
-export function shuffle<T>(a: readonly T[]): T[] {
-  const b = [...a];
-  for (let i = b.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [b[i], b[j]] = [b[j], b[i]];
-  }
-  return b;
-}
-export const pick = <T,>(a: readonly T[]): T => a[Math.floor(Math.random() * a.length)];

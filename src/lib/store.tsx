@@ -10,7 +10,9 @@ export interface Progress {
   dailyGoal: number;
   cards: Record<string, Card>;
   days: Record<string, number>; // YYYY-MM-DD → points
-  stats: { kana: number; words: number; verbs: number; reading: number; camera: number; forms: Record<string, number> };
+  stats: { kana: number; words: number; verbs: number; reading: number; camera: number; listen: number; grammar: number; daily: number; forms: Record<string, number> };
+  misses: Record<string, number>; // form:te, particle:を, adj:past → recent mistakes
+  dailyDate: string; // last day the daily lesson was finished
   stories: string[];
   stickers: string[];
 }
@@ -22,20 +24,25 @@ function detectLang(): Lang {
   return LANGS.includes(code) ? code : 'en';
 }
 
-const initial = (): Progress => ({
+export const initial = (): Progress => ({
   lang: detectLang(), theme: 'auto', sound: true, furigana: true, dailyGoal: 20,
-  cards: {}, days: {}, stats: { kana: 0, words: 0, verbs: 0, reading: 0, camera: 0, forms: {} }, stories: [], stickers: [],
+  cards: {}, days: {}, stats: { kana: 0, words: 0, verbs: 0, reading: 0, camera: 0, listen: 0, grammar: 0, daily: 0, forms: {} },
+  misses: {}, dailyDate: '', stories: [], stickers: [],
 });
 
 function load(): Progress {
+  let raw: string | null = null;
   try {
-    const raw = localStorage.getItem(KEY);
+    raw = localStorage.getItem(KEY);
     if (raw) {
       const base = initial();
       const saved = JSON.parse(raw);
       return { ...base, ...saved, stats: { ...base.stats, ...saved.stats } };
     }
-  } catch { /* storage unavailable: start fresh */ }
+  } catch {
+    // Unreadable save: keep a copy so starting fresh cannot destroy it.
+    try { if (raw) localStorage.setItem(`${KEY}.damaged`, raw); } catch { /* storage blocked */ }
+  }
   return initial();
 }
 
@@ -65,12 +72,15 @@ export const STICKERS: Sticker[] = [
   { id: 'read1', emoji: '📖', name: '読書ねこ', value: (p) => p.stories.length, goal: 1 },
   { id: 'read10', emoji: '📚', name: '本の虫', value: (p) => p.stories.length, goal: 10 },
   { id: 'cam5', emoji: '📷', name: 'カメラねこ', value: (p) => p.stats.camera, goal: 5 },
+  { id: 'daily7', emoji: '🎒', name: '毎日レッスン', value: (p) => p.stats.daily, goal: 7 },
+  { id: 'listen50', emoji: '🎧', name: 'ねこの耳', value: (p) => p.stats.listen, goal: 50 },
+  { id: 'grammar50', emoji: '🧩', name: '文法パズル', value: (p) => p.stats.grammar, goal: 50 },
   { id: 'streak3', emoji: '🔥', name: '三日坊主じゃない', value: (p) => streakOf(p.days), goal: 3 },
   { id: 'streak7', emoji: '⭐', name: '一週間', value: (p) => streakOf(p.days), goal: 7 },
   { id: 'streak30', emoji: '👑', name: '一か月', value: (p) => streakOf(p.days), goal: 30 },
 ];
 
-type StatKey = 'kana' | 'words' | 'verbs' | 'reading' | 'camera';
+type StatKey = 'kana' | 'words' | 'verbs' | 'reading' | 'camera' | 'listen' | 'grammar';
 
 interface Store {
   p: Progress;
@@ -78,6 +88,9 @@ interface Store {
   score: (stat: StatKey, correct: boolean, form?: string) => void;
   grade: (id: string, g: Grade) => void;
   addCard: (id: string) => void;
+  track: (key: string, ok: boolean) => void;
+  finishDaily: () => void;
+  restore: (p: Progress) => void;
   finishStory: (id: string) => void;
   newSticker: Sticker | null;
   clearSticker: () => void;
@@ -133,6 +146,14 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         stats: g === 'again' ? q.stats : { ...q.stats, words: q.stats.words + 1 },
       };
     }),
+    track: (key, ok) => setP((q) => {
+      const misses = { ...q.misses };
+      const n = (misses[key] ?? 0) + (ok ? -1 : 1);
+      if (n > 0) misses[key] = n; else delete misses[key];
+      return { ...q, misses };
+    }),
+    finishDaily: () => setP((q) => ({ ...q, dailyDate: dayKey(), stats: { ...q.stats, daily: q.stats.daily + 1 } })),
+    restore: (next) => setP(next),
     addCard: (id) => setP((q) => (q.cards[id] ? q : { ...q, cards: { ...q.cards, [id]: newCard(Date.now()) } })),
     finishStory: (id) => setP((q) => (q.stories.includes(id) ? q : { ...q, stories: [...q.stories, id] })),
     reset: () => setP({ ...initial(), lang: p.lang, theme: p.theme }),
