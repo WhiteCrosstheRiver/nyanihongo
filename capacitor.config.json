@@ -1,0 +1,6 @@
+{
+  "appId": "com.nyanihongo.app",
+  "appName": "Nyanihongo",
+  "webDir": "dist",
+  "android": { "backgroundColor": "#fff5f7" }
+}
