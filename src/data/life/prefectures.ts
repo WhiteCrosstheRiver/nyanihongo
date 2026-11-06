@@ -63,7 +63,7 @@ export const PREFECTURES: Prefecture[] = [
     'C\'est ici que le Japon produit le plus de pommes. En août, d\'immenses chars de papier illuminés défilent à Aomori pour le festival Nebuta.',
     'Aquí se cultivan más manzanas que en ningún otro lugar de Japón. En agosto, enormes carrozas de papel iluminadas desfilan por Aomori en el festival Nebuta.',
     '日本苹果产量第一。每年八月，巨大的发光纸灯彩车在青森市巡游，这就是睡魔祭。')),
-  p(3, 'iwate', '⛩️', 'いわてけん', '岩手県', 'tohoku', 'もりおかし', '盛岡市', n('Iwate', '岩手县'), tr(
+  p(3, 'iwate', '🥣', 'いわてけん', '岩手県', 'tohoku', 'もりおかし', '盛岡市', n('Iwate', '岩手县'), tr(
     'The second largest prefecture after Hokkaido, with a rugged Pacific coast. Hiraizumi\'s golden hall at Chuson-ji is a World Heritage treasure, and Morioka is known for wanko soba served in endless tiny bowls.',
     'La deuxième plus grande préfecture après Hokkaido, avec une côte pacifique sauvage. Le pavillon doré du Chuson-ji à Hiraizumi est classé au patrimoine mondial, et Morioka est connue pour ses wanko soba servies dans une suite de petits bols.',
     'La segunda prefectura más grande tras Hokkaido, con una costa pacífica escarpada. El pabellón dorado del Chuson-ji en Hiraizumi es Patrimonio Mundial, y Morioka es famosa por el wanko soba, servido en cuenquitos sin fin.',
@@ -164,7 +164,7 @@ export const PREFECTURES: Prefecture[] = [
     'Campos ondulantes de té verde con el monte Fuji detrás son la imagen clásica de esta prefectura del Pacífico. También ofrece wasabi fresco y las aguas termales de la península de Izu.',
     '起伏的绿茶田与背后的富士山，是这个太平洋沿岸县的经典画面。这里还有新鲜山葵和伊豆半岛的温泉。')),
   p(23, 'aichi', '🚗', 'あいちけん', '愛知県', 'chubu', 'なごやし', '名古屋市', n('Aichi', '爱知县'), tr(
-    'The heart of Japan\'s car industry, home of Toyota. Its capital Nagoya has a golden-roofed castle and rich food flavoured with dark red miso.',
+    'The heart of Japan\'s car industry, home of Toyota. Its capital Nagoya has a castle topped with golden roof ornaments and rich food flavoured with dark red miso.',
     'Le cœur de l\'industrie automobile japonaise, berceau de Toyota. Sa capitale Nagoya possède un château aux ornements dorés et une cuisine riche au miso rouge foncé.',
     'El corazón de la industria automovilística japonesa, cuna de Toyota. Su capital, Nagoya, tiene un castillo con adornos dorados y una cocina intensa con miso rojo oscuro.',
     '日本汽车工业的中心，丰田的故乡。首府名古屋有金鯱装饰的城堡，美食则以深红色的味噌著称。')),
@@ -208,7 +208,7 @@ export const PREFECTURES: Prefecture[] = [
     'La préfecture la moins peuplée du Japon. Les grandes dunes de Tottori s\'élèvent au bord de la mer du Japon, et l\'on peut même y monter à dos de chameau.',
     'La prefectura con menos habitantes de Japón. Las grandes dunas de Tottori se alzan junto al mar de Japón, y allí se puede incluso montar en camello.',
     '日本人口最少的县。巨大的鸟取沙丘紧邻日本海，游客甚至可以在那里骑骆驼。')),
-  p(32, 'shimane', '🎋', 'しまねけん', '島根県', 'chugoku', 'まつえし', '松江市', n('Shimane', '岛根县'), tr(
+  p(32, 'shimane', '⛩️', 'しまねけん', '島根県', 'chugoku', 'まつえし', '松江市', n('Shimane', '岛根县'), tr(
     'Izumo Taisha is one of Japan\'s oldest great shrines, where the gods are said to gather each autumn. The Iwami Ginzan silver mine is a World Heritage site, and Matsue has an original castle.',
     'Izumo Taisha est l\'un des plus anciens grands sanctuaires du Japon ; on dit que les dieux s\'y réunissent chaque automne. La mine d\'argent d\'Iwami Ginzan est classée au patrimoine mondial, et Matsue possède un château d\'origine.',
     'Izumo Taisha es uno de los grandes santuarios más antiguos de Japón, donde se dice que los dioses se reúnen cada otoño. La mina de plata de Iwami Ginzan es Patrimonio Mundial, y Matsue tiene un castillo original.',
@@ -239,7 +239,7 @@ export const PREFECTURES: Prefecture[] = [
     'La prefectura más pequeña en superficie, orgullosa de llamarse «prefectura del udon» gracias a los elásticos fideos de Sanuki. Las islas de arte del mar Interior, como Naoshima, están muy cerca.',
     '面积最小的县，凭借筋道的赞岐乌冬面自豪地自称“乌冬县”。附近还有濑户内海的艺术岛屿，比如直岛。')),
   p(38, 'ehime', '🛁', 'えひめけん', '愛媛県', 'shikoku', 'まつやまし', '松山市', n('Ehime', '爱媛县'), tr(
-    'Matsuyama\'s Dogo Onsen is one of Japan\'s oldest hot springs, with a wonderful old bathhouse. The hillsides are covered with citrus groves, and the Shimanami Kaido cycling road starts here.',
+    'Matsuyama\'s Dogo Onsen is one of Japan\'s oldest hot springs, with a wonderful old bathhouse. The hillsides are covered with citrus groves, and the Shimanami Kaido cycling road ends here.',
     'Le Dogo Onsen de Matsuyama est l\'une des plus anciennes sources chaudes du Japon, avec un superbe vieux bain public. Les collines sont couvertes d\'agrumes, et la route cyclable Shimanami Kaido arrive ici.',
     'El Dogo Onsen de Matsuyama es una de las aguas termales más antiguas de Japón, con una preciosa casa de baños antigua. Las colinas están cubiertas de cítricos, y la ruta ciclista Shimanami Kaido llega hasta aquí.',
     '松山的道后温泉是日本最古老的温泉之一，还有一座精美的老浴场。山坡上种满柑橘，岛波海道自行车道也通到这里。')),
@@ -274,9 +274,9 @@ export const PREFECTURES: Prefecture[] = [
     'Se llama con orgullo la prefectura de las aguas termales, pues tiene más fuentes que ningún otro lugar de Japón. Beppu tiene sus humeantes «infiernos» de aguas de colores, y Yufuin es un tranquilo balneario al pie del monte Yufu.',
     '自豪地自称“温泉县”，温泉数量居日本之首。别府有冒着热气的彩色“地狱”温泉，由布院则是由布岳脚下宁静的度假地。')),
   p(45, 'miyazaki', '🥭', 'みやざきけん', '宮崎県', 'kyushu', 'みやざきし', '宮崎市', n('Miyazaki', '宫崎县'), tr(
-    'Warm and sunny, with surf beaches and palm-lined roads along the Pacific. Takachiho\'s deep gorge is tied to old myths of the gods, and its ripe mangoes are famous gifts.',
-    'Chaude et ensoleillée, avec des plages de surf et des routes bordées de palmiers le long du Pacifique. Les gorges profondes de Takachiho sont liées aux vieux mythes des dieux, et ses mangues mûres sont des cadeaux réputés.',
-    'Cálida y soleada, con playas de surf y carreteras con palmeras junto al Pacífico. El profundo desfiladero de Takachiho está ligado a antiguos mitos de los dioses, y sus mangos maduros son regalos famosos.',
+    'Warm and sunny, with surf beaches and palm-lined roads along the Pacific. Takachiho\'s deep gorge is tied to old myths of the gods, and Miyazaki\'s ripe mangoes are famous gifts.',
+    'Chaude et ensoleillée, avec des plages de surf et des routes bordées de palmiers le long du Pacifique. Les gorges profondes de Takachiho sont liées aux vieux mythes des dieux, et les mangues mûres de Miyazaki sont des cadeaux réputés.',
+    'Cálida y soleada, con playas de surf y carreteras con palmeras junto al Pacífico. El profundo desfiladero de Takachiho está ligado a antiguos mitos de los dioses, y los mangos maduros de Miyazaki son regalos famosos.',
     '温暖晴朗，太平洋沿岸有冲浪海滩和棕榈大道。高千穗的深峡谷与古老的神话相连，熟透的芒果则是有名的礼品。')),
   p(46, 'kagoshima', '🌋', 'かごしまけん', '鹿児島県', 'kyushu', 'かごしまし', '鹿児島市', n('Kagoshima', '鹿儿岛县'), tr(
     'The active volcano Sakurajima smokes just across the bay from the city. To the south, Yakushima is a World Heritage island of ancient cedars, and sweet potatoes are a local speciality.',

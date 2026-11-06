@@ -7,7 +7,7 @@ export const JPGOODS: LifeTopic = {
   title: tr('Everyday goods', 'Objets du quotidien', 'Artículos cotidianos', '日用品'),
   intro: tr(
     "Toothpaste, sticky notes, rubbish bags, a box of sweets for a colleague: daily life in Japan runs on small things and the shops that sell them. Let’s wander the aisles together, learn what to say at the till, and find out which bin everything goes in.",
-    "Du dentifrice, des marque-pages adhésifs, des sacs-poubelle, une boîte de gâteaux pour un collègue : la vie au Japon repose sur de petites choses et sur les boutiques qui les vendent. Flânons ensemble dans les rayons, apprenons quoi dire à la caisse et découvrons dans quelle poubelle tout doit aller.",
+    "Du dentifrice, des notes adhésives, des sacs-poubelle, une boîte de gâteaux pour un collègue : la vie au Japon repose sur de petites choses et sur les boutiques qui les vendent. Flânons ensemble dans les rayons, apprenons quoi dire à la caisse et découvrons dans quelle poubelle tout doit aller.",
     "Pasta de dientes, notas adhesivas, bolsas de basura, una caja de dulces para un compañero: la vida diaria en Japón funciona a base de cosas pequeñas y de las tiendas que las venden. Paseemos juntos por los pasillos, aprendamos qué decir en la caja y descubramos en qué cubo va cada cosa.",
     "牙膏、便利贴、垃圾袋，还有带给同事的一盒点心：日本的日常生活正是由这些小东西和卖它们的小店撑起来的。一起去逛逛货架，学学收银台前该说什么，再看看每样东西该扔进哪个垃圾桶吧。",
   ),
@@ -32,7 +32,7 @@ export const JPGOODS: LifeTopic = {
     )),
     section('🧴', tr('Bathroom, kitchen and desk', 'Salle de bains, cuisine et bureau', 'Baño, cocina y escritorio', '浴室、厨房和书桌'), tr(
       "Look around a Japanese home and you will find many small, thoughtful products. Shampoo and detergent are widely sold in refill pouches, which use less plastic than a new bottle each time. In the kitchen, a ceramic rice bowl sits beside a sponge, a scrubbing brush, plastic wrap and a mesh for the sink drain. Bathrooms may have a plastic stool and basin for washing before getting in the tub, and many toilets have their own separate slippers. Stationery is a small joy of its own: smooth gel pens, erasable pens, cute sticky notes and neat folders fill whole floors of big shops, and students love comparing them.",
-      "Dans un foyer japonais, on remarque une foule de petits produits bien pensés. Le shampoing et la lessive se vendent largement en sachets de recharge, qui utilisent moins de plastique qu’un flacon neuf à chaque fois. Dans la cuisine, un bol à riz en céramique côtoie une éponge, une brosse, du film alimentaire et un filet pour la bonde de l’évier. La salle de bains peut avoir un tabouret et une bassine en plastique pour se laver avant d’entrer dans la baignoire, et beaucoup de toilettes ont leurs propres pantoufles. La papeterie est un petit bonheur à part : stylos gel très fluides, stylos effaçables, jolis marque-pages adhésifs et classeurs soignés occupent des étages entiers dans les grandes boutiques, et les élèves adorent les comparer.",
+      "Dans un foyer japonais, on remarque une foule de petits produits bien pensés. Le shampoing et la lessive se vendent largement en sachets de recharge, qui utilisent moins de plastique qu’un flacon neuf à chaque fois. Dans la cuisine, un bol à riz en céramique côtoie une éponge, une brosse, du film alimentaire et un filet pour la bonde de l’évier. La salle de bains peut avoir un tabouret et une bassine en plastique pour se laver avant d’entrer dans la baignoire, et beaucoup de toilettes ont leurs propres pantoufles. La papeterie est un petit bonheur à part : stylos gel très fluides, stylos effaçables, jolies notes adhésives et classeurs soignés occupent des étages entiers dans les grandes boutiques, et les élèves adorent les comparer.",
       "Si miras una casa japonesa, verás muchos productos pequeños y bien pensados. El champú y el detergente se venden mucho en bolsas de recarga, que gastan menos plástico que una botella nueva cada vez. En la cocina, un cuenco de cerámica para arroz está junto a una esponja, un cepillo, film transparente y una malla para el desagüe del fregadero. Los baños pueden tener un taburete y un barreño de plástico para lavarse antes de entrar en la bañera, y muchos aseos tienen sus propias zapatillas. La papelería es una pequeña alegría aparte: bolígrafos de gel suaves, bolígrafos borrables, notas adhesivas monas y carpetas ordenadas llenan plantas enteras de las grandes tiendas, y a los estudiantes les encanta compararlos.",
       "走进日本人的家，你会发现许多贴心的小物件。洗发水和洗涤剂大多有补充装，比每次买新瓶少用塑料。厨房里，陶瓷饭碗旁边放着海绵、刷子、保鲜膜和水槽过滤网。浴室里可能有塑料小凳和水盆，方便进浴缸前先洗身体；很多厕所还备有专用拖鞋。文具本身就是一种小确幸：顺滑的中性笔、可擦笔、可爱的便利贴和整洁的文件夹，能占满大型商店的整整几层，学生们特别喜欢互相比较。",
     )),
@@ -50,7 +50,7 @@ export const JPGOODS: LifeTopic = {
     )),
     section('💴', tr('Paying and receipts', 'Payer et les tickets', 'Pagar y los recibos', '付款与小票'), tr(
       "At the till, you place your money in a small tray rather than handing it over, and the cashier counts your change back out loud, then gives you the receipt. Cards are widely accepted, as are rechargeable transit cards and smartphone QR payments, though some small shops are still cash only. Expect a question about a point card, and it is fine to say no. Plastic bags have carried a small charge since 2020, so many people bring a folded eco bag. Shelf prices usually include tax, though some shops show the pre-tax price larger, and rates differ for food to go and food eaten in. For business expenses, ask for a formal ryōshūsho.",
-      "À la caisse, on dépose son argent dans une petite coupelle au lieu de le tendre, et le caissier compte la monnaie à voix haute avant de donner le ticket. Les cartes sont largement acceptées, tout comme les cartes de transport rechargeables et les paiements par QR code, même si certaines petites boutiques ne prennent encore que les espèces. On vous demandera sans doute une carte de fidélité, et il est tout à fait possible de dire non. Les sacs plastique sont payants depuis 2020, pour quelques yens, et beaucoup de gens gardent un sac réutilisable plié sur eux. Les prix affichés incluent généralement la taxe, mais certains magasins mettent le prix hors taxe en plus gros, et le taux diffère entre la nourriture à emporter et sur place. Pour une note de frais, demandez un ryōshūsho en bonne et due forme.",
+      "À la caisse, on dépose son argent dans une petite coupelle au lieu de le tendre, et le caissier compte la monnaie à voix haute avant de donner le ticket. Les cartes sont largement acceptées, tout comme les cartes de transport rechargeables et les paiements par QR code, même si certaines petites boutiques ne prennent encore que les espèces. On vous demandera sans doute une carte de fidélité, et il est tout à fait possible de dire non. Les sacs plastique sont facturés une petite somme depuis 2020, si bien que beaucoup de gens gardent un sac réutilisable plié sur eux. Les prix affichés incluent généralement la taxe, mais certains magasins mettent le prix hors taxe en plus gros, et le taux diffère entre la nourriture à emporter et sur place. Pour une note de frais, demandez un ryōshūsho en bonne et due forme.",
       "En la caja, dejas el dinero en una bandejita en lugar de darlo en mano, y el cajero cuenta el cambio en voz alta antes de entregarte el recibo. Las tarjetas se aceptan ampliamente, igual que las tarjetas recargables de transporte y los pagos con código QR en el móvil, aunque algunas tiendas pequeñas solo admiten efectivo. Seguramente te preguntarán por una tarjeta de puntos, y puedes decir que no. Las bolsas de plástico tienen un pequeño coste desde 2020, así que mucha gente lleva una bolsa reutilizable plegada. Los precios suelen incluir el impuesto, aunque algunas tiendas muestran más grande el precio sin impuesto, y el tipo varía entre la comida para llevar y la que se toma allí. Para gastos de empresa, pide un ryōshūsho formal.",
       "在收银台，钱要放在小托盘上，而不是直接递到对方手里，收银员会大声数出找零，再把小票给你。银行卡使用广泛，可充值的交通卡和手机二维码支付也很常见，但有些小店仍然只收现金。店员多半会问你有没有积分卡，说没有也完全没关系。2020年起塑料袋开始收取少量费用，所以很多人随身带一个折叠环保袋。标价一般含税，但也有商店把不含税价格写得更大；打包和堂食的税率也不一样。如果要报销，记得索取正式的“領収書”（收据）。",
     )),
@@ -65,9 +65,9 @@ export const JPGOODS: LifeTopic = {
 ぜいこみ|税込|💴|tax included|taxe comprise|impuesto incluido|含税
 しょうひぜい|消費税|💴|consumption tax|taxe à la consommation|impuesto al consumo|消费税
 げんきん|現金|💵|cash|espèces|efectivo|现金
-でんしマネー|電子マネー|📱|electronic money|monnaie électronique|dinero electrónico|电子钱包
+でんしマネー|電子マネー|📱|electronic money|monnaie électronique|dinero electrónico|电子货币
 ポイントカード||💳|point card|carte de fidélité|tarjeta de puntos|积分卡
-りょうしゅうしょ|領収書|🧾|formal receipt|reçu officiel|recibo formal|发票收据
+りょうしゅうしょ|領収書|🧾|formal receipt|reçu officiel|recibo formal|正式收据
 セルフレジ||🛒|self-checkout|caisse automatique|caja de autopago|自助收银机
 じどうはんばいき|自動販売機|🥤|vending machine|distributeur automatique|máquina expendedora|自动售货机
 ひゃくえんショップ|百円ショップ|🪙|100-yen shop|magasin à 100 yens|tienda de 100 yenes|百元店
@@ -91,7 +91,7 @@ export const JPGOODS: LifeTopic = {
 かぜぐすり|風邪薬|💊|cold medicine|médicament contre le rhume|medicina para el resfriado|感冒药
 カイロ||🔥|disposable hand warmer|chaufferette jetable|calentador de bolsillo|暖宝宝
 ボールペン||🖊️|ballpoint pen|stylo à bille|bolígrafo|圆珠笔
-ふせん|付箋|📝|sticky note|marque-page adhésif|nota adhesiva|便利贴
+ふせん|付箋|📝|sticky note|note adhésive|nota adhesiva|便利贴
 ふうとう|封筒|✉️|envelope|enveloppe|sobre|信封
 びんせん|便箋|📄|letter paper|papier à lettres|papel de carta|信纸
 じょうぎ|定規|📏|ruler|règle|regla|尺子
@@ -121,7 +121,7 @@ export const JPGOODS: LifeTopic = {
     line('カードで{払|はら}えますか。', 'Can I pay by card?', 'Je peux payer par carte ?', '¿Puedo pagar con tarjeta?', '可以刷卡吗？'),
     line('{現金|げんきん}でお{願|ねが}いします。', 'I’ll pay in cash, please.', 'Je vais payer en espèces.', 'En efectivo, por favor.', '我付现金。'),
     line('ポイントカードは{持|も}っていません。', 'I don’t have a point card.', 'Je n’ai pas de carte de fidélité.', 'No tengo tarjeta de puntos.', '我没有积分卡。'),
-    line('{領収書|りょうしゅうしょ}をください。', 'Could I have a formal receipt?', 'Je pourrais avoir un reçu officiel ?', '¿Me da un recibo formal?', '请给我开一张发票。'),
+    line('{領収書|りょうしゅうしょ}をください。', 'Could I have a formal receipt?', 'Je pourrais avoir un reçu officiel ?', '¿Me da un recibo formal?', '请给我开一张正式收据。'),
     line('{税込|ぜいこ}みでいくらですか。', 'How much is it with tax?', 'Ça fait combien, taxe comprise ?', '¿Cuánto es con impuestos?', '含税多少钱？'),
     line('{電池|でんち}はどこにありますか。', 'Where are the batteries?', 'Où sont les piles ?', '¿Dónde están las pilas?', '电池在哪里？'),
     line('{頭痛|ずつう}の{薬|くすり}はありますか。', 'Do you have anything for a headache?', 'Vous avez quelque chose contre le mal de tête ?', '¿Tienen algo para el dolor de cabeza?', '有治头痛的药吗？'),

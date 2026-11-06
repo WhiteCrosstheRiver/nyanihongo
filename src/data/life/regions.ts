@@ -27,7 +27,7 @@ export const REGIONS: LifeTopic = {
       'The word 都道府県 lists the four kinds of prefecture. There is one 都 (Tokyo), one 道 (Hokkaido), two 府 (Osaka and Kyoto) and 43 県. Each has its own governor and assembly, much like a state or department, and a capital city that holds the local government.',
       'Le mot 都道府県 énumère les quatre types de préfectures. Il y a un 都 (Tokyo), un 道 (Hokkaido), deux 府 (Osaka et Kyoto) et 43 県. Chacune a son gouverneur et son assemblée, un peu comme un département ou un État, ainsi qu\'un chef-lieu où siège le gouvernement local.',
       'La palabra 都道府県 enumera los cuatro tipos de prefectura. Hay un 都 (Tokio), un 道 (Hokkaido), dos 府 (Osaka y Kioto) y 43 県. Cada una tiene su gobernador y su asamblea, parecido a un estado o provincia, y una capital donde está el gobierno local.',
-      '“都道府县”这个词列出了四种行政区：一个都（东京）、一个道（北海道）、两个府（大阪和京都）以及43个县。每个行政区都有自己的知事和议会，还有设置地方政府的首府。',
+      '“都道府县”这个词列出了四种行政区：一个都（东京）、一个道（北海道）、两个府（大阪和京都）以及43个县。每个行政区都有自己的知事和议会，还有设有地方政府的首府。',
     )),
     section('🧭', tr('The eight regions', 'Les huit régions', 'Las ocho regiones', '八大地方'), tr(
       'People often group the prefectures into eight traditional regions: Hokkaido, Tohoku, Kanto, Chubu, Kansai (also called Kinki), Chugoku, Shikoku and Kyushu, which usually includes Okinawa. The regions have no government of their own, but they appear in weather forecasts, sport and everyday talk. Beware of 中国: it means both the Chugoku region and China.',
@@ -45,7 +45,7 @@ export const REGIONS: LifeTopic = {
       'Standard Japanese is based on the speech of Tokyo, but every region has its own dialect, called 方言. In Kansai you may hear おおきに for "thank you" and あかん for "no good". In Hokkaido, なまら means "very", and in Hakata sentences may end in ばい or たい. The traditional Ryukyuan languages of Okinawa are so different that they are treated as separate languages.',
       'Le japonais standard repose sur le parler de Tokyo, mais chaque région a son dialecte, appelé 方言. Dans le Kansai, on peut entendre おおきに pour « merci » et あかん pour « pas bon ». À Hokkaido, なまら veut dire « très », et à Hakata les phrases peuvent finir par ばい ou たい. Les langues ryukyu traditionnelles d\'Okinawa sont si différentes qu\'on les considère comme des langues à part.',
       'El japonés estándar se basa en el habla de Tokio, pero cada región tiene su dialecto, llamado 方言. En Kansai se oye おおきに por «gracias» y あかん por «no está bien». En Hokkaido, なまら significa «muy», y en Hakata las frases pueden acabar en ばい o たい. Las lenguas ryukyuenses tradicionales de Okinawa son tan distintas que se consideran lenguas aparte.',
-      '标准日语以东京话为基础，但各地都有自己的方言（方言）。在关西，“谢谢”可以说おおきに，“不行”说あかん。在北海道，なまら表示“非常”，博多话的句尾常有ばい或たい。冲绳传统的琉球语差别很大，被视为独立的语言。',
+      '标准日语以东京话为基础，但各地都有自己的方言，日语同样写作“方言”。在关西，“谢谢”可以说おおきに，“不行”说あかん。在北海道，なまら表示“非常”，博多话的句尾常有ばい或たい。冲绳传统的琉球语差别很大，被视为独立的语言。',
     )),
     section('🚄', tr('Getting around', 'Se déplacer', 'Cómo moverse', '出行'), tr(
       'Shinkansen bullet trains link Hokkaido, Honshu and Kyushu, using an undersea tunnel to cross to Hokkaido. Shikoku is reached by great bridges and regular trains, and Okinawa by plane or boat. Stations sell ekiben, boxed meals that show off local food, so a train trip is also a tour of the regions.',

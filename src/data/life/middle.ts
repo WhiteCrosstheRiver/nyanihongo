@@ -9,7 +9,7 @@ export const MIDDLE: LifeTopic = {
     "Hana is twelve now. The randoseru stays at home, a uniform hangs on her door, and suddenly everyone older than her is a senpai. These three years are the last of compulsory education, and for the first time she has to think about what comes next.",
     "Hana a maintenant douze ans. Le randoseru reste à la maison, un uniforme est accroché à sa porte, et tous les plus âgés sont soudain des senpai. Ces trois années sont les dernières de la scolarité obligatoire et, pour la première fois, elle doit penser à la suite.",
     "Hana ya tiene doce años. La randoseru se queda en casa, un uniforme cuelga de su puerta y, de repente, todos los mayores son senpai. Estos tres años son los últimos de la enseñanza obligatoria y, por primera vez, tiene que pensar en lo que viene después.",
-    "小花十二岁了。书包“兰德赛鲁”留在了家里，门上挂起了校服，比她年长的人一下子都成了“前辈”。这三年是义务教育的最后阶段，她也第一次要考虑将来的路。",
+    "小花十二岁了。小学时背的方形书包留在了家里，门上挂起了校服，比她年长的人一下子都成了“前辈”。这三年是义务教育的最后阶段，她也第一次要考虑将来的路。",
   ),
   sections: [
     section('👔', tr('A new uniform', 'Un nouvel uniforme', 'Un uniforme nuevo', '新校服'), tr(
@@ -43,9 +43,9 @@ export const MIDDLE: LifeTopic = {
       "高中不属于义务教育，但几乎人人都上，所以到了三年级，大家都会碰到一个新词：“受验”，也就是升学考试。夏天过后，社团以最后一场比赛结束活动，大家的注意力转向模拟考和“进路”，也就是今后的方向。小花和父母、老师一起开三方面谈，商量哪些学校适合自己，还去参观了几所学校的开放日。很多同学放学后去补习班“塾”，也有人在家自学或上网课。公立高中一般既看考试成绩，也看学校的评价报告，所以平时的努力和最后的冲刺同样重要。这一年可能有些累，但朋友们午休时互相提问，老师也提醒大家：好的道路不止一条。",
     )),
     section('🌸', tr('The end of compulsory education', 'La fin de la scolarité obligatoire', 'El fin de la enseñanza obligatoria', '义务教育的结束'), tr(
-      "Compulsory education in Japan lasts nine years, six in elementary school and three in middle school, and ends in March of the year a student has turned fifteen. Results for public high schools tend to come just around graduation, so the mood can swing between tears and laughter in a single week. At the ceremony, each student walks up to receive a diploma, then the class sings one last time. Afterwards, everyone lingers in the yard to take photos and fill each other's albums with messages. A younger club member shyly asks Hana for a button from her jacket, and she laughs and hands it over. For the first time, her friends will scatter to different schools, and she walks home the long way.",
-      "Au Japon, la scolarité obligatoire dure neuf ans, six à l'école primaire et trois au collège, et se termine en mars de l'année où l'élève a eu quinze ans. Les résultats des lycées publics tombent souvent autour de la remise des diplômes, si bien qu'on passe des larmes au rire dans la même semaine. Lors de la cérémonie, chacun monte recevoir son diplôme, puis la classe chante une dernière fois. Ensuite, tout le monde s'attarde dans la cour pour prendre des photos et s'écrire des messages dans les albums. Une plus jeune du club demande timidement un bouton de sa veste à Hana, qui rit et le lui donne. Pour la première fois, ses amis vont partir dans des écoles différentes, et elle rentre chez elle par le chemin le plus long.",
-      "En Japón la enseñanza obligatoria dura nueve años, seis en primaria y tres en secundaria, y termina en marzo del año en que el alumno ha cumplido quince. Los resultados de los institutos públicos suelen llegar en torno a la graduación, así que en una misma semana se pasa de las lágrimas a la risa. En la ceremonia, cada alumno sube a recoger su diploma y luego la clase canta por última vez. Después, todos se quedan en el patio haciéndose fotos y escribiéndose mensajes en los álbumes. Una compañera más joven del club le pide con timidez un botón de la chaqueta a Hana, que se ríe y se lo da. Por primera vez, sus amigas irán a escuelas distintas, y ella vuelve a casa por el camino largo.",
+      "Compulsory education in Japan lasts nine years, six in elementary school and three in middle school, and ends in March, at the close of the school year in which a student turns fifteen. Results for public high schools tend to come just around graduation, so the mood can swing between tears and laughter in a single week. At the ceremony, each student walks up to receive a diploma, then the class sings one last time. Afterwards, everyone lingers in the yard to take photos and fill each other's albums with messages. A younger club member shyly asks Hana for a button from her jacket, and she laughs and hands it over. For the first time, her friends will scatter to different schools, and she walks home the long way.",
+      "Au Japon, la scolarité obligatoire dure neuf ans, six à l'école primaire et trois au collège, et se termine en mars, à la fin de l'année scolaire où l'élève atteint quinze ans. Les résultats des lycées publics tombent souvent autour de la remise des diplômes, si bien qu'on passe des larmes au rire dans la même semaine. Lors de la cérémonie, chacun monte recevoir son diplôme, puis la classe chante une dernière fois. Ensuite, tout le monde s'attarde dans la cour pour prendre des photos et s'écrire des messages dans les albums. Une plus jeune du club demande timidement un bouton de sa veste à Hana, qui rit et le lui donne. Pour la première fois, ses amis vont partir dans des écoles différentes, et elle rentre chez elle par le chemin le plus long.",
+      "En Japón la enseñanza obligatoria dura nueve años, seis en primaria y tres en secundaria, y termina en marzo, al final del curso en que el alumno cumple quince años. Los resultados de los institutos públicos suelen llegar en torno a la graduación, así que en una misma semana se pasa de las lágrimas a la risa. En la ceremonia, cada alumno sube a recoger su diploma y luego la clase canta por última vez. Después, todos se quedan en el patio haciéndose fotos y escribiéndose mensajes en los álbumes. Una compañera más joven del club le pide con timidez un botón de la chaqueta a Hana, que se ríe y se lo da. Por primera vez, sus amigas irán a escuelas distintas, y ella vuelve a casa por el camino largo.",
       "日本的义务教育共九年，小学六年，初中三年，到学生年满十五岁那个学年的三月结束。公立高中的录取结果往往就在毕业前后公布，所以一周之内常常又哭又笑。毕业典礼上，学生逐一上台领取毕业证书，全班最后一次合唱。典礼结束后，大家留在校园里拍照，在纪念册上互相写下留言。社团里的学妹害羞地向小花要校服上的纽扣，她笑着递了过去。这是朋友们第一次要分散到不同的学校，小花特意绕远路慢慢走回家。",
     )),
   ],
@@ -65,21 +65,21 @@ export const MIDDLE: LifeTopic = {
 きまつテスト|期末テスト|🖊️|end-of-term exam|contrôle de fin de trimestre|examen final de trimestre|期末考试
 つうしんぼ|通信簿|📒|school report card|bulletin scolaire|boletín de notas|成绩单
 ぶかつ|部活|⚾|school club activity|activité de club|actividad de club|社团活动
-せんぱい|先輩|🙇|senior student, senpai|élève plus âgé, senpai|compañero mayor, senpai|前辈,学长学姐
-こうはい|後輩|🐣|junior student, kohai|élève plus jeune, kohai|compañero menor, kohai|后辈,学弟学妹
+せんぱい|先輩|🙇|senior student, senpai|élève plus âgé, senpai|compañero mayor, senpai|前辈，学长学姐
+こうはい|後輩|🐣|junior student, kohai|élève plus jeune, kohai|compañero menor, kohai|后辈，学弟学妹
 こもん|顧問|🧑‍🏫|club adviser (teacher)|professeur responsable d'un club|profesor encargado del club|社团指导老师
 うんどうぶ|運動部|⚽|sports club|club de sport|club deportivo|运动类社团
 ぶんかぶ|文化部|🎭|arts or culture club|club culturel|club cultural|文化类社团
 すいそうがくぶ|吹奏楽部|🎺|concert band club|club d'orchestre d'harmonie|club de banda|管乐社
 あされん|朝練|🌅|morning practice|entraînement du matin|entrenamiento matutino|晨练
 こうしきせん|公式戦|🏆|official match|match officiel|partido oficial|正式比赛
-いんたい|引退|👋|retiring from a club|départ du club (en fin de parcours)|retirarse del club|退出社团,引退
+いんたい|引退|👋|retiring from a club|départ du club (en fin de parcours)|retirarse del club|退出社团，引退
 しゅうがくりょこう|修学旅行|🚄|school trip|voyage scolaire|viaje escolar|修学旅行
-しおり|栞|🔖|trip booklet, bookmark|livret de voyage, marque-page|cuadernillo del viaje, marcapáginas|旅行手册,书签
+しおり|栞|🔖|trip booklet, bookmark|livret de voyage, marque-page|cuadernillo del viaje, marcapáginas|旅行手册，书签
 はんこうどう|班行動|🗺️|free time in small groups|sortie en petit groupe|actividad en grupo pequeño|分组活动
 まくらなげ|枕投げ|🛌|pillow fight|bataille de polochons|guerra de almohadas|枕头大战
 しょうとう|消灯|💡|lights out|extinction des lumières|apagar las luces|熄灯
-しんろ|進路|🧭|future path after school|orientation, voie choisie|camino tras la escuela|今后的方向,出路
+しんろ|進路|🧭|future path after school|orientation, voie choisie|camino tras la escuela|今后的方向，出路
 さんしゃめんだん|三者面談|👨‍👩‍👧|student-parent-teacher meeting|entretien élève-parent-professeur|reunión de alumno, padres y tutor|三方面谈
 じゅけん|受験|✏️|taking an entrance exam|passer un examen d'entrée|presentarse a un examen de ingreso|参加升学考试
 じゅけんせい|受験生|📚|student preparing for entrance exams|candidat aux examens d'entrée|estudiante que prepara exámenes de ingreso|备考生
@@ -90,23 +90,23 @@ export const MIDDLE: LifeTopic = {
 そつぎょうしょうしょ|卒業証書|📜|graduation diploma|diplôme de fin d'études|diploma de graduación|毕业证书
 `,
   phrases: [
-    line("{先輩|せんぱい}、お{疲|つか}れさまです!", "Thanks for all your hard work, senpai!", "Bon travail, senpai !", "¡Buen trabajo, senpai!", "前辈,您辛苦了!"),
-    line("{部活|ぶかつ}、どこに{入|はい}るか{決|き}めた?", "Have you decided which club to join?", "Tu as choisi ton club ?", "¿Ya has decidido a qué club apuntarte?", "你决定加入哪个社团了吗?"),
-    line("{明日|あした}、{朝練|あされん}あるから{早|はや}く{寝|ね}なきゃ。", "I've got morning practice tomorrow, so I need an early night.", "J'ai entraînement demain matin, je dois me coucher tôt.", "Mañana tengo entrenamiento temprano, así que debo acostarme pronto.", "明天有晨练,我得早点睡。"),
+    line("{先輩|せんぱい}、お{疲|つか}れさまです！", "Thanks for all your hard work, senpai!", "Bon travail, senpai !", "¡Buen trabajo, senpai!", "前辈，您辛苦了！"),
+    line("{部活|ぶかつ}、どこに{入|はい}るか{決|き}めた？", "Have you decided which club to join?", "Tu as choisi ton club ?", "¿Ya has decidido a qué club apuntarte?", "你决定加入哪个社团了吗？"),
+    line("{明日|あした}、{朝練|あされん}あるから{早|はや}く{寝|ね}なきゃ。", "I've got morning practice tomorrow, so I need an early night.", "J'ai entraînement demain matin, je dois me coucher tôt.", "Mañana tengo entrenamiento temprano, así que debo acostarme pronto.", "明天有晨练，我得早点睡。"),
     line("{来週|らいしゅう}からテスト{期間|きかん}だって。", "Apparently test period starts next week.", "Il paraît que les contrôles commencent la semaine prochaine.", "Dicen que la semana que viene empiezan los exámenes.", "听说下周就开始考试周了。"),
     line("ネクタイ、{曲|ま}がってるよ。", "Your tie is crooked.", "Ta cravate est de travers.", "Llevas la corbata torcida.", "你的领带歪了。"),
-    line("{塾|じゅく}の{宿題|しゅくだい}、やった?", "Did you do your juku homework?", "Tu as fait tes devoirs du juku ?", "¿Has hecho los deberes de la academia?", "补习班的作业你写了吗?"),
-    line("{三者面談|さんしゃめんだん}、{緊張|きんちょう}するなあ。", "I'm so nervous about the meeting with my parents and teacher.", "Ça me stresse, l'entretien avec mes parents et le prof.", "Qué nervios la reunión con mis padres y el tutor.", "三方面谈,好紧张啊。"),
-    line("{志望校|しぼうこう}、もう{決|き}めた?", "Have you picked which high school you want?", "Tu as choisi ton lycée ?", "¿Ya sabes a qué instituto quieres ir?", "你想考的学校定了吗?"),
+    line("{塾|じゅく}の{宿題|しゅくだい}、やった？", "Did you do your juku homework?", "Tu as fait tes devoirs du juku ?", "¿Has hecho los deberes de la academia?", "补习班的作业你写了吗？"),
+    line("{三者面談|さんしゃめんだん}、{緊張|きんちょう}するなあ。", "I'm so nervous about the meeting with my parents and teacher.", "Ça me stresse, l'entretien avec mes parents et le prof.", "Qué nervios la reunión con mis padres y el tutor.", "三方面谈，好紧张啊。"),
+    line("{志望校|しぼうこう}、もう{決|き}めた？", "Have you picked which high school you want?", "Tu as choisi ton lycée ?", "¿Ya sabes a qué instituto quieres ir?", "你想考的学校定了吗？"),
     line("{修学旅行|しゅうがくりょこう}の{班|はん}、{一緒|いっしょ}になろうよ。", "Let's be in the same group for the school trip.", "On se met dans le même groupe pour le voyage scolaire ?", "Vamos a ponernos en el mismo grupo para el viaje.", "修学旅行我们分在一组吧。"),
-    line("{京都|きょうと}でどこに{行|い}きたい?", "Where do you want to go in Kyoto?", "Tu veux aller où à Kyoto ?", "¿Adónde quieres ir en Kioto?", "在京都你想去哪儿?"),
-    line("{引退|いんたい}{試合|じあい}、{絶対|ぜったい}{勝|か}とう!", "Let's win our final match, no matter what!", "On gagne notre dernier match, quoi qu'il arrive !", "¡Vamos a ganar nuestro último partido sí o sí!", "最后一场比赛,一定要赢!"),
-    line("{卒業|そつぎょう}しても、ずっと{友達|ともだち}だよ。", "We'll always be friends, even after graduation.", "On restera amis, même après le collège.", "Seremos amigas siempre, aunque nos graduemos.", "就算毕业了,我们也永远是朋友。"),
+    line("{京都|きょうと}でどこに{行|い}きたい？", "Where do you want to go in Kyoto?", "Tu veux aller où à Kyoto ?", "¿Adónde quieres ir en Kioto?", "在京都你想去哪儿？"),
+    line("{引退|いんたい}{試合|じあい}、{絶対|ぜったい}{勝|か}とう！", "Let's win our final match, no matter what!", "On gagne notre dernier match, quoi qu'il arrive !", "¡Vamos a ganar nuestro último partido sí o sí!", "最后一场比赛，一定要赢！"),
+    line("{卒業|そつぎょう}しても、ずっと{友達|ともだち}だよ。", "We'll always be friends, even after graduation.", "On restera amis, même après le collège.", "Seremos amigas siempre, aunque nos graduemos.", "就算毕业了，我们也永远是朋友。"),
   ],
   links: [
     link('photo', 'Wikimedia Commons', 'https://commons.wikimedia.org/wiki/Category:Junior_high_schools_in_Japan', tr('Junior high school buildings across Japan', 'Des collèges à travers le Japon', 'Edificios de secundaria por todo Japón', '日本各地的初中校舍')),
-    link('photo', 'Wikimedia Commons', 'https://commons.wikimedia.org/wiki/Category:Kiyomizu-dera', tr('Kiyomizu-dera, a classic school trip stop in Kyoto', 'Le Kiyomizu-dera, étape classique des voyages scolaires à Kyoto', 'Kiyomizu-dera, parada clásica de los viajes escolares en Kioto', '清水寺:京都修学旅行的经典一站')),
-    link('video', 'MEXT (YouTube)', 'https://www.youtube.com/@MEXTchannel', tr("The education ministry's official channel (in Japanese)", 'La chaîne officielle du ministère de l’Éducation (en japonais)', 'El canal oficial del Ministerio de Educación (en japonés)', '日本文部科学省官方频道(日语)')),
+    link('photo', 'Wikimedia Commons', 'https://commons.wikimedia.org/wiki/Category:Kiyomizu-dera', tr('Kiyomizu-dera, a classic school trip stop in Kyoto', 'Le Kiyomizu-dera, étape classique des voyages scolaires à Kyoto', 'Kiyomizu-dera, parada clásica de los viajes escolares en Kioto', '清水寺：京都修学旅行的经典一站')),
+    link('video', 'MEXT (YouTube)', 'https://www.youtube.com/@MEXTchannel', tr("The education ministry's official channel (in Japanese)", 'La chaîne officielle du ministère de l’Éducation (en japonais)', 'El canal oficial del Ministerio de Educación (en japonés)', '日本文部科学省官方频道（日语）')),
     link('guide', 'MEXT', 'https://www.mext.go.jp/en/policy/education/overview/index.htm', tr('Overview of the Japanese school system', 'Présentation du système scolaire japonais', 'Panorama del sistema escolar japonés', '日本学校制度概览')),
     link('guide', 'Wikipedia', 'https://en.wikipedia.org/wiki/Japanese_school_uniform', tr('The history of Japanese school uniforms', "L'histoire des uniformes scolaires japonais", 'La historia de los uniformes escolares japoneses', '日本校服的历史')),
     link('guide', 'Wikipedia', 'https://en.wikipedia.org/wiki/Senpai_and_k%C5%8Dhai', tr('Senpai and kohai explained', 'Senpai et kohai expliqués', 'Qué significan senpai y kohai', '什么是前辈与后辈')),
