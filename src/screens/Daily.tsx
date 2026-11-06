@@ -66,7 +66,7 @@ function NewWord({ word, api }: { word: Word; api: QuizApi }) {
   );
 }
 
-function ReviewQ({ word, options, api }: { word: Word; options: Word[]; api: QuizApi }) {
+export function ReviewQ({ word, options, api }: { word: Word; options: Word[]; api: QuizApi }) {
   const { t, lang } = useT();
   const { grade } = useStore();
   return (

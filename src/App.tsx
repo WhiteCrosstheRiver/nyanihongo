@@ -12,6 +12,7 @@ import { MeScreen } from './screens/Me';
 import { DailyScreen } from './screens/Daily';
 import { ListenScreen } from './screens/Listen';
 import { GrammarScreen } from './screens/Grammar';
+import { LifeScreen } from './screens/Life';
 
 export type Nav = (to: string) => void;
 
@@ -45,7 +46,7 @@ function Shell() {
     return () => clearTimeout(id);
   }, [newSticker, clearSticker]);
 
-  const active = route === 'picture' ? 'words' : ['review', 'daily', 'listen', 'grammar'].includes(route) ? 'home' : route;
+  const active = route === 'picture' ? 'words' : ['review', 'daily', 'listen', 'grammar', 'life'].includes(route) ? 'home' : route;
   return (
     <div className="shell">
       <nav className="nav" aria-label="Main">
@@ -70,6 +71,7 @@ function Shell() {
         {route === 'daily' && <DailyScreen go={go} />}
         {route === 'listen' && <ListenScreen go={go} />}
         {route === 'grammar' && <GrammarScreen go={go} />}
+        {route === 'life' && <LifeScreen go={go} />}
       </main>
       {newSticker && (
         <div className="toast pop" role="status" onClick={clearSticker}>

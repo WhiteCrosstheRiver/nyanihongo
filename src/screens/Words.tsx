@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { CATEGORIES, CATEGORY_IDS, PICTURE_WORDS, WORDS, wordById, type CategoryId, type Word } from '../data/vocab';
+import { CATEGORY_IDS, PICTURE_WORDS, WORDS, categoryEmoji, wordById, type CategoryId, type Word } from '../data/vocab';
 import { CATEGORY_NAMES, useT } from '../lib/i18n';
 import { useStore } from '../lib/store';
 import { speak } from '../lib/audio';
@@ -29,7 +29,7 @@ export function WordsScreen({ go }: { go: Nav }) {
           const done = list.filter((w) => p.cards[w.id]).length;
           return (
             <button key={c} className="cat" onClick={() => setActive(c)}>
-              <span className="cat-icon">{CATEGORIES[c][0]}</span>
+              <span className="cat-icon">{categoryEmoji(c)}</span>
               <span>{CATEGORY_NAMES[c][lang]}</span>
               <small>{done}/{list.length}</small>
               <Progress value={done} max={list.length} />

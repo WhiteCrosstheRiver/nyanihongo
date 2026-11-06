@@ -10,6 +10,7 @@ const LESSONS: { to: string; icon: string; title: Key; desc?: Key; color: string
   { to: 'verbs', icon: '🐾', title: 'verbs', color: 'lav', jp: 'どうし' },
   { to: 'grammar', icon: '🧩', title: 'grammar', color: 'peach', jp: 'ぶんぽう' },
   { to: 'listen', icon: '🎧', title: 'listen', color: 'mint', jp: 'ききとり' },
+  { to: 'life', icon: '🗾', title: 'life', color: 'pink', jp: 'にほんのくらし' },
   { to: 'camera', icon: '📷', title: 'camera', color: 'sky', jp: 'カメラ' },
   { to: 'read', icon: '📖', title: 'read', color: 'lemon', jp: 'よみもの' },
 ];

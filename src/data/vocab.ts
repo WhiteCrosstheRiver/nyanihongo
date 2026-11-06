@@ -2,6 +2,8 @@ import type { Lang } from '../lib/i18n';
 import { ANIMALS, BODY, CLOTHES, FOOD, HOME, NATURE, PEOPLE } from './vocab1';
 import { ADJECTIVES, COLORS, NUMBERS, PHRASES, PLACES, SCHOOL, TIME, TRANSPORT } from './vocab2';
 import { IDEAS, LIFE } from './vocab3';
+import { LIFE_TOPICS } from './life';
+import type { LifeId } from './life/types';
 
 export interface Word {
   id: string;
@@ -19,11 +21,17 @@ export const CATEGORIES = {
   life: ['🛍️', LIFE], ideas: ['💭', IDEAS],
   colors: ['🎨', COLORS], adjectives: ['✨', ADJECTIVES], phrases: ['💬', PHRASES],
 } as const;
-export type CategoryId = keyof typeof CATEGORIES;
-export const CATEGORY_IDS = Object.keys(CATEGORIES) as CategoryId[];
+export type CategoryId = keyof typeof CATEGORIES | LifeId;
+const lists = {
+  ...Object.fromEntries(Object.entries(CATEGORIES).map(([id, [, words]]) => [id, words])),
+  ...Object.fromEntries(LIFE_TOPICS.map((t) => [t.id, t.words])),
+} as Record<CategoryId, string>;
+export const CATEGORY_IDS = Object.keys(lists) as CategoryId[];
+export const categoryEmoji = (c: CategoryId) =>
+  LIFE_TOPICS.find((t) => t.id === c)?.emoji ?? CATEGORIES[c as keyof typeof CATEGORIES][0];
 
 export const WORDS: Word[] = CATEGORY_IDS.flatMap((category) =>
-  CATEGORIES[category][1].trim().split('\n').map((line) => {
+  lists[category].trim().split('\n').filter(Boolean).map((line) => {
     const [kana, written, emoji, en, fr, es, zh] = line.split('|');
     return {
       id: `${category}:${kana}:${written}`, kana, written: written || kana, emoji,
@@ -33,7 +41,7 @@ export const WORDS: Word[] = CATEGORY_IDS.flatMap((category) =>
 );
 
 export const PICTURE_WORDS = WORDS.filter((w) =>
-  w.emoji && !['adjectives', 'numbers', 'colors', 'time', 'phrases', 'ideas'].includes(w.category));
+  w.emoji && !['adjectives', 'numbers', 'colors', 'time', 'phrases', 'ideas', 'names', 'regions'].includes(w.category));
 
 export const wordById = (id: string) => WORDS.find((w) => w.id === id);
 export const findWord = (kana: string, category?: CategoryId) =>
