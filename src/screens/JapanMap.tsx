@@ -33,6 +33,12 @@ const S: Record<string, Record<Lang, string>> = {
     es: '¿Prefectura diminuta? Elige una región para acercar.',
     zh: '地方太小？选择一个地区来放大。',
   },
+  simplified: {
+    en: 'This is a simplified study map, not a statement about borders. Some smaller and outlying islands are left out, including the Northern Territories (Southern Kurils), Takeshima (Dokdo), the Senkaku Islands (Diaoyu Islands), Amami and Ogasawara. Okinawa is moved into a box and its shape is only a sketch.',
+    fr: "Ceci est une carte d'étude simplifiée, pas une prise de position sur les frontières. Certaines petites îles et îles éloignées n'y figurent pas, dont les Territoires du Nord (Kouriles du Sud), Takeshima (Dokdo), les îles Senkaku (îles Diaoyu), Amami et Ogasawara. Okinawa est placée dans un encadré et sa forme n'est qu'une esquisse.",
+    es: 'Este es un mapa de estudio simplificado, no una declaración sobre fronteras. Se omiten algunas islas pequeñas y alejadas, entre ellas los Territorios del Norte (Kuriles del Sur), Takeshima (Dokdo), las islas Senkaku (islas Diaoyu), Amami y Ogasawara. Okinawa aparece en un recuadro y su forma es solo un esbozo.',
+    zh: '这是一张简化的学习地图，不代表对边界的任何立场。图中省略了部分较小和偏远的岛屿，包括北方领土（南千岛群岛）、竹岛（独岛）、尖阁诸岛（钓鱼岛）、奄美群岛和小笠原群岛。冲绳被移到方框内，形状仅为示意。',
+  },
   region: { en: 'Region', fr: 'Région', es: 'Región', zh: '地区' },
   capital: { en: 'Capital', fr: 'Chef-lieu', es: 'Capital', zh: '首府' },
   known: { en: 'Known for', fr: 'Connue pour', es: 'Conocida por', zh: '著名之处' },
@@ -255,6 +261,7 @@ export function JapanMap() {
           <MapView region={region} selected={selected} onPick={setSelected} />
           <RegionChips region={region} onChange={chooseRegion} />
           <p className="note">{S.tip[lang]}</p>
+          <p className="note">{S.simplified[lang]}</p>
         </div>
         <div className="jm-side">
           <Detail pref={pref} />
