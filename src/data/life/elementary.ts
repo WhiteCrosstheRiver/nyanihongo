@@ -1,14 +1,117 @@
-import { tr, type LifeTopic } from './types';
+import { line, link, section, tr, type LifeTopic } from './types';
 
 export const ELEMENTARY: LifeTopic = {
   id: 'elementary',
   emoji: '🎒',
   jp: 'しょうがっこう',
   title: tr('Elementary school', 'École primaire', 'Escuela primaria', '小学'),
-  intro: tr('', '', '', ''),
-  sections: [],
+  intro: tr(
+    "Meet Hana. She has just turned six, and her shiny new school bag is almost as big as she is! We will follow her all the way from her first day here to university, starting with six years of friends, chores and school lunches.",
+    "Voici Hana. Elle vient d'avoir six ans et son cartable tout neuf est presque aussi grand qu'elle ! Nous allons la suivre de son premier jour d'école jusqu'à l'université, en commençant par six années d'amitiés, de corvées et de repas à la cantine.",
+    "Te presentamos a Hana. Acaba de cumplir seis años y su mochila nueva es casi tan grande como ella. La acompañaremos desde su primer día de clase hasta la universidad, empezando por seis años de amistades, tareas compartidas y almuerzos escolares.",
+    "这是小花。她刚满六岁，崭新的书包几乎和她一样大！我们将陪她从上学第一天一路走到大学，先从这六年的朋友、值日和学校午餐说起。",
+  ),
+  sections: [
+    section('🌸', tr('The entrance ceremony', "La cérémonie d'entrée", 'La ceremonia de ingreso', '入学典礼'), tr(
+      "The Japanese school year begins in April, usually just as the cherry trees bloom in much of the country. Children who have turned six by April 1 start first grade that spring, so Hana's class ranges from April babies to children born in the following March. On the big day she walks through the gate in her best clothes, with her parents beside her, and stops for a photo by the sign that reads 入学式. Inside the gym, older pupils welcome the newcomers with songs and a short speech. Then her teacher calls each name, and Hana answers “Hai!” as loudly as she dares.",
+      "Au Japon, l'année scolaire commence en avril, souvent au moment où les cerisiers fleurissent dans une grande partie du pays. Les enfants qui ont six ans au 1er avril entrent en première année ce printemps-là : la classe de Hana va donc des enfants nés en avril à ceux nés en mars de l'année suivante. Le grand jour, elle franchit le portail en habits de fête, ses parents à ses côtés, et pose pour une photo près du panneau marqué 入学式. Dans le gymnase, les grands accueillent les nouveaux avec des chansons et un petit discours. Puis la maîtresse appelle chaque enfant, et Hana répond « Hai ! » aussi fort qu'elle l'ose.",
+      "En Japón el curso escolar empieza en abril, muchas veces justo cuando florecen los cerezos en gran parte del país. Los niños que han cumplido seis años antes del 1 de abril entran en primero esa primavera, así que en la clase de Hana hay desde nacidos en abril hasta nacidos en marzo del año siguiente. El gran día cruza la puerta con su mejor ropa, acompañada por sus padres, y se detiene para hacerse una foto junto al cartel que dice 入学式. En el gimnasio, los alumnos mayores reciben a los nuevos con canciones y un breve discurso. Luego la maestra dice cada nombre, y Hana responde «¡Hai!» tan alto como se atreve.",
+      "日本的学年从四月开始，这时全国许多地方正值樱花盛开。到4月1日为止满六岁的孩子在当年春天升入一年级，所以小花的同班同学既有四月出生的，也有第二年三月出生的。入学那天，她穿着最好的衣服，由爸爸妈妈陪着走进校门，在写着“入学式”的牌子旁拍照留念。在体育馆里，高年级的同学用歌声和简短的致辞欢迎新生。接着老师逐一点名，小花鼓起勇气大声回答：“到！”",
+    )),
+    section('🎒', tr('A randoseru and a walk with the neighbours', 'Le randoseru et le trajet entre voisins', 'La randoseru y el camino con los vecinos', '双肩书包与邻里同行'), tr(
+      "Hana's randoseru is a stiff box-shaped backpack, often a gift from her grandparents and meant to last all six years. Red and black were once the usual colours, but today the shop shelves also offer lavender, mint and brown. A safety alarm hangs from one strap, and in many towns first graders also wear a bright yellow hat or bag cover. At many schools, children from the same neighbourhood meet at a set spot each morning and walk together, with a sixth grader at the front and another at the back. Parents and volunteers in bright vests stand at the crossings, and within a few weeks Hana knows every corner of the route. No one drives her to the door: walking there is simply part of growing up.",
+      "Le randoseru de Hana est un sac à dos rigide en forme de boîte, souvent offert par les grands-parents et prévu pour durer six ans. Autrefois surtout rouges ou noirs, ces sacs existent aujourd'hui aussi en lavande, en vert menthe ou en marron. Une alarme de sécurité pend à une bretelle et, dans bien des villes, les élèves de première année portent aussi un chapeau ou une housse jaune vif. Dans de nombreuses écoles, les enfants d'un même quartier se retrouvent chaque matin à un point fixe et marchent ensemble, un élève de sixième année devant et un autre derrière. Parents et bénévoles en gilet voyant surveillent les passages piétons, et en quelques semaines Hana connaît le trajet par cœur. Personne ne la dépose en voiture : aller à l'école à pied fait partie de grandir.",
+      "La randoseru de Hana es una mochila rígida en forma de caja, muchas veces un regalo de los abuelos, pensada para durar los seis años. Antes solían ser rojas o negras, pero hoy las tiendas también las venden en lavanda, verde menta o marrón. De una correa cuelga una alarma de seguridad y, en muchas ciudades, los de primero llevan además un gorro o una funda de color amarillo vivo. En muchas escuelas, los niños del mismo barrio se reúnen cada mañana en un punto fijo y caminan juntos, con un alumno de sexto delante y otro detrás. Padres y voluntarios con chalecos llamativos vigilan los cruces, y en pocas semanas Hana se sabe el camino de memoria. Nadie la lleva hasta la puerta en coche: ir andando forma parte de crecer.",
+      "小花的“兰德赛鲁”是一种硬挺的方形双肩书包，常由爷爷奶奶赠送，要用满整整六年。以前多是红色和黑色，如今店里还有薰衣草紫、薄荷绿和棕色。背带上挂着防身警报器；在许多地方，一年级学生还会戴上醒目的黄帽子或套上黄色书包罩。不少学校的同一片区的孩子每天早上在固定地点集合，一起走路上学，队伍前后各有一名六年级学生。家长和志愿者穿着显眼的背心守在路口，没过几周，小花就熟悉了路上的每个拐角。没有人开车送她到校门口，自己走路上学本身就是成长的一部分。",
+    )),
+    section('👟', tr('Indoor shoes and the classroom day', "Chaussons d'intérieur et journée en classe", 'Zapatillas de interior y el día en clase', '室内鞋与课堂的一天'), tr(
+      "At the entrance Hana slips off her outdoor shoes and puts them in her numbered cubby, then changes into white indoor shoes called uwabaki. They go home every Friday or so to be washed. Her class stays in one room with one main teacher, who teaches most lessons. First graders learn Japanese, arithmetic, music, arts and crafts, PE, and a subject called seikatsu, where they grow morning glories and explore their neighbourhood. Science and social studies begin in third grade, and English lessons become a full subject in fifth grade. By the end of sixth grade Hana will have studied 1,026 kanji. Her home-school notebook, the renrakucho, travels back and forth with messages between teacher and parents.",
+      "À l'entrée, Hana retire ses chaussures d'extérieur, les range dans son casier numéroté et enfile des chaussons blancs appelés uwabaki, qu'elle rapporte à la maison environ chaque vendredi pour les laver. Sa classe reste dans la même salle avec une maîtresse principale, qui assure la plupart des cours. En première année, on étudie le japonais, le calcul, la musique, les arts plastiques, le sport et une matière appelée seikatsu, où l'on fait pousser des volubilis et explore le quartier. Les sciences et les études sociales commencent en troisième année, et l'anglais devient une vraie matière en cinquième année. À la fin de la sixième année, Hana aura étudié 1 026 kanji. Son carnet de liaison, le renrakucho, fait l'aller-retour entre la maîtresse et les parents.",
+      "En la entrada, Hana se quita los zapatos de calle, los deja en su casillero numerado y se pone unas zapatillas blancas llamadas uwabaki, que se lleva a casa más o menos cada viernes para lavarlas. Su clase se queda en la misma aula con una maestra principal, que da casi todas las materias. En primero se estudia japonés, aritmética, música, plástica, educación física y una asignatura llamada seikatsu, en la que cultivan campanillas y exploran el barrio. Ciencias y ciencias sociales empiezan en tercero, y el inglés pasa a ser una asignatura completa en quinto. Al terminar sexto, Hana habrá estudiado 1026 kanji. Su cuaderno de comunicación, el renrakucho, va y viene con mensajes entre la maestra y sus padres.",
+      "一到门口，小花就脱下外穿的鞋，放进编了号的鞋柜，换上叫作“上履”的白色室内鞋，大约每周五带回家洗。全班固定在一间教室里，大部分课程都由班主任一人教。一年级学习国语、算术、音乐、图画手工、体育，还有一门“生活”课，孩子们会种牵牛花、探索社区。理科和社会从三年级开始，英语到五年级才成为正式科目。到六年级结束时，小花将学完1026个汉字。她的家校联络本“连络帐”每天往返于老师和家长之间。",
+    )),
+    section('🍛', tr('School lunch and lunch duty', 'Le déjeuner et le service de cantine', 'El almuerzo y el turno de comida', '学校午餐与午餐值日'), tr(
+      "There is no canteen line in most elementary schools: lunch comes to the classroom. A team of pupils puts on white smocks, caps and masks, fetches the big pots and crates from the kitchen, and serves everyone else at their desks. This week it is Hana's turn to ladle the curry, and she concentrates hard so that the last classmate still gets a full bowl. The meal is planned by nutritionists and might be rice, grilled fish, miso soup and a carton of milk, with fried bread or a regional dish as a treat. Everyone says “itadakimasu” together and the teacher eats the same food. Afterwards the children fold their milk cartons and carry everything back, and the monthly menu on the fridge at home tells Hana what to look forward to.",
+      "Dans la plupart des écoles primaires, il n'y a pas de file à la cantine : le déjeuner vient à la classe. Une équipe d'élèves enfile blouses blanches, charlottes et masques, va chercher les grandes marmites et les caisses en cuisine, puis sert les autres à leur place. Cette semaine, c'est au tour de Hana de servir le curry, et elle se concentre pour que le dernier camarade ait une assiette bien remplie. Conçu par des nutritionnistes, le repas peut comporter du riz, du poisson grillé, une soupe miso et une brique de lait, avec parfois du pain frit ou un plat régional en guise de régal. Tout le monde dit « itadakimasu » en chœur, et la maîtresse mange la même chose. Ensuite, les enfants plient leurs briques de lait et rapportent tout, et le menu du mois, affiché sur le frigo à la maison, dit à Hana ce qui l'attend.",
+      "En la mayoría de las escuelas primarias no hay cola de comedor: la comida llega al aula. Un equipo de alumnos se pone batas blancas, gorros y mascarillas, va a buscar las ollas y las cajas a la cocina y sirve a los demás en sus pupitres. Esta semana le toca a Hana servir el curry, y se concentra mucho para que al último compañero también le llegue un plato lleno. Lo planifican nutricionistas y puede incluir arroz, pescado a la plancha, sopa de miso y un brik de leche, con pan frito o algún plato regional como capricho. Todos dicen «itadakimasu» a la vez, y la maestra come lo mismo. Después, los niños doblan sus briks de leche y lo devuelven todo, y el menú del mes, pegado en la nevera de casa, le cuenta a Hana qué le espera.",
+      "大多数小学没有食堂排队的场面，午餐是送到教室来的。一组学生穿上白罩衣，戴好帽子和口罩，从厨房抬来大锅和餐箱，再给大家分到座位上。这周轮到小花盛咖喱，她格外专心，好让最后一位同学也能吃到满满一碗。午餐由营养师设计，可能是米饭、烤鱼、味噌汤和一盒牛奶，偶尔还有炸面包或地方特色菜当惊喜。全班一起说“我开动了”，老师也吃同样的饭菜。吃完后，孩子们把牛奶盒折好，把餐具送回去。贴在家里冰箱上的月度菜单，让小花天天都有盼头。",
+    )),
+    section('🧹', tr('Cleaning time', 'Le temps du ménage', 'La hora de limpieza', '打扫时间'), tr(
+      "When the music starts to play, it is time to clean. Most Japanese schools set aside a short period every day when pupils themselves look after their building. Desks are pushed to the back of the room, one group sweeps with brooms and dustpans, and another crawls along the floor pushing wet cloths in a line that looks a lot like a race. Older children take on the stairs, the shoe area or the toilets, and they show the first graders how to wring a cloth properly. Hana grumbles a little in winter, when the water is cold. Still, she notices that nobody drops rubbish in a corridor they scrubbed themselves.",
+      "Quand la musique retentit, c'est l'heure du ménage. La plupart des écoles japonaises réservent chaque jour un petit moment où les élèves entretiennent eux-mêmes leurs locaux. On pousse les bureaux au fond de la salle, un groupe balaie avec balais et pelles, un autre avance à quatre pattes en poussant des chiffons humides, en ligne, dans ce qui ressemble fort à une course. Les plus grands s'occupent des escaliers, de l'entrée ou des toilettes, et montrent aux petits comment bien essorer un chiffon. Hana râle un peu en hiver, quand l'eau est glacée. Mais elle remarque que personne ne jette de papier dans un couloir qu'il a lui-même frotté.",
+      "Cuando suena la música, llega la hora de limpiar. La mayoría de las escuelas japonesas reserva cada día un rato para que los propios alumnos cuiden el edificio. Empujan los pupitres al fondo del aula, un grupo barre con escobas y recogedores, y otro avanza a gatas empujando trapos húmedos en fila, en algo muy parecido a una carrera. Los mayores se encargan de las escaleras, la zona de zapatos o los baños, y enseñan a los de primero a escurrir bien el trapo. En invierno, cuando el agua está fría, Hana refunfuña un poco. Aun así, nota que nadie tira basura en un pasillo que ha fregado con sus propias manos.",
+      "音乐一响，就到了打扫时间。大多数日本学校每天都留出一小段时间，让学生自己照看校舍。大家把课桌推到教室后面，一组同学用扫帚和簸箕扫地，另一组趴在地上推着湿抹布一字排开往前冲，简直像在赛跑。高年级学生负责楼梯、鞋柜区或厕所，还会教一年级学生怎样把抹布拧干。冬天水很冷，小花难免嘟囔几句。不过她发现，亲手擦过的走廊，谁也不会乱丢垃圾。",
+    )),
+    section('🏃', tr('Sports day', 'La fête du sport', 'El día del deporte', '运动会'), tr(
+      "Undokai is the highlight of the year, held in autumn at many schools, and in spring at others. For weeks the whole school practises marching, dancing and cheering in the playground. The pupils divide into a red team and a white team, marked by the colour of their caps, and the score stays on a big board all day. There are footraces, a ball-toss where children hurl beanbags at a basket on a tall pole, a tug-of-war, and a final relay that makes everyone scream. Families arrive early to spread out mats, film the races and share a picnic lunch. Hana comes fourth in her race, but the red team wins and she keeps the sticker on her arm for a whole week.",
+      "L'undokai est le grand moment de l'année, organisé en automne dans bien des écoles et au printemps dans d'autres. Pendant des semaines, toute l'école s'entraîne à défiler, danser et encourager dans la cour. Les élèves forment une équipe rouge et une équipe blanche, reconnaissables à la couleur de leur casquette, et les points s'affichent toute la journée sur un grand tableau. Au programme : des courses, un jeu où l'on lance des petits sacs dans un panier perché sur un haut mât, le tir à la corde et un relais final qui fait crier tout le monde. Les familles arrivent tôt pour étaler leurs nattes, filmer les courses et pique-niquer ensemble. Hana arrive quatrième à sa course, mais l'équipe rouge gagne et elle garde son autocollant sur le bras toute la semaine.",
+      "El undokai es el gran momento del año, y se celebra en otoño en muchas escuelas y en primavera en otras. Durante semanas, toda la escuela ensaya en el patio los desfiles, los bailes y los gritos de ánimo. Los alumnos se dividen en equipo rojo y equipo blanco, según el color de la gorra, y los puntos se ven todo el día en un gran marcador. Hay carreras, un juego en el que se lanzan saquitos a una cesta en lo alto de un poste, tira y afloja y un relevo final que hace gritar a todo el mundo. Las familias llegan temprano para extender sus esterillas, grabar las carreras y compartir un pícnic. Hana queda cuarta en su carrera, pero gana el equipo rojo y se deja la pegatina en el brazo toda la semana.",
+      "运动会是一年中最热闹的日子，很多学校在秋天举行，也有的在春天。之前几周，全校都在操场上练习列队、舞蹈和加油。学生分成红队和白队，靠帽子的颜色区分，比分整天都显示在大大的记分板上。项目有赛跑、把小沙包抛进高杆上篮子的投球比赛、拔河，还有让所有人喊破嗓子的压轴接力。家长一早就来铺好野餐垫，拍下比赛，再一起吃便当。小花跑了第四名，但红队赢了，她胳膊上的贴纸留了整整一个星期。",
+    )),
+    section('🌻', tr('Summer homework', 'Les devoirs de vacances', 'Los deberes de verano', '暑假作业'), tr(
+      "In most of Japan the summer holiday runs for about six weeks, from late July to the end of August, though it is shorter in snowy regions that take a longer winter break. Freedom comes with a pile of work. Hana has drill books, a picture diary and a book report, plus the famous jiyu kenkyu, a free research project on any subject she likes. This year she records how long her morning glories stay open and makes a poster of the results. In some neighbourhoods, children gather early in the park for radio exercises and collect a stamp on a card. Every August 31, somewhere in Japan, a child is finishing a diary in a great hurry, and this year it might just be Hana.",
+      "Dans la majeure partie du Japon, les vacances d'été durent environ six semaines, de fin juillet à fin août, un peu moins dans les régions enneigées qui ont un plus long congé d'hiver. Mais la liberté s'accompagne d'une pile de travail. Hana a des cahiers d'exercices, un journal illustré, une fiche de lecture et le fameux jiyu kenkyu, un projet de recherche libre sur le sujet de son choix. Cette année, elle note combien de temps ses volubilis restent ouverts et en fait une affiche. Dans certains quartiers, les enfants se retrouvent tôt au parc pour la gymnastique à la radio et font tamponner une carte. Chaque 31 août, quelque part au Japon, un enfant termine son journal à toute vitesse, et cette année, ce pourrait bien être Hana.",
+      "En casi todo Japón las vacaciones de verano duran unas seis semanas, de finales de julio a finales de agosto, aunque son más cortas en las zonas de nieve, que descansan más en invierno. La libertad llega con un montón de tareas. Hana tiene cuadernos de ejercicios, un diario ilustrado, un comentario de un libro y el famoso jiyu kenkyu, un trabajo de investigación libre sobre lo que ella quiera. Este año anota cuánto tiempo siguen abiertas sus campanillas y hace un póster con los resultados. En algunos barrios, los niños se reúnen temprano en el parque para hacer gimnasia con la radio y sellan una tarjeta. Cada 31 de agosto, en algún lugar de Japón, un niño termina su diario a toda prisa, y este año quizá sea Hana.",
+      "日本大部分地区的暑假约六周，从七月下旬到八月底；多雪地区寒假较长，暑假则短一些。自由的日子里还有一大堆作业。小花要做习题册、写图画日记和读后感，还有著名的“自由研究”，题目可以随意选。今年她记录牵牛花每天开多久，并把结果做成了海报。有些社区的孩子清早聚在公园里做广播体操，在卡片上盖章打卡。每年的8月31日，日本总有孩子在手忙脚乱地赶日记，今年说不定就是小花。",
+    )),
+  ],
   words: `
+にゅうがくしき|入学式|🌸|entrance ceremony|cérémonie d'entrée|ceremonia de ingreso|入学典礼
+ランドセル||🎒|randoseru, stiff school backpack|randoseru, cartable rigide|randoseru, mochila escolar rígida|日本小学生书包
+しゅうだんとうこう|集団登校|🚶|walking to school in a group|trajet à l'école en groupe|ir a la escuela en grupo|集体上学
+はんちょう|班長|🚩|group leader|chef de groupe|jefe de grupo|组长
+ぼうはんブザー|防犯ブザー|🔔|personal safety alarm|alarme de sécurité|alarma personal|防身警报器
+うわばき|上履き|👟|indoor shoes|chaussons d'école|zapatillas de interior|室内鞋
+げたばこ|下駄箱|👞|shoe cubbies|casiers à chaussures|casilleros de zapatos|鞋柜
+れんらくちょう|連絡帳|📒|home-school notebook|carnet de liaison|cuaderno de comunicación|家校联络本
+がくどう|学童|🏠|after-school care|garderie périscolaire|cuidado extraescolar|课后托管
+きゅうしょく|給食|🍱|school lunch|repas scolaire|almuerzo escolar|学校午餐
+きゅうしょくとうばん|給食当番|🍛|lunch duty|service de cantine|turno de comida|午餐值日
+はくい|白衣|🥼|white smock|blouse blanche|bata blanca|白罩衣
+はいぜん|配膳|🍽️|serving out the food|service des plats|servir la comida|分发饭菜
+こんだてひょう|献立表|📋|lunch menu chart|menu du mois|menú mensual|菜单表
+そうじとうばん|掃除当番|🧹|cleaning duty|tour de ménage|turno de limpieza|打扫值日
+ぞうきん|雑巾|🧽|cleaning cloth|chiffon|trapo|抹布
+ちりとり|塵取り|🗑️|dustpan|pelle à poussière|recogedor|簸箕
+うんどうかい|運動会|🏃|sports day|fête du sport|día del deporte|运动会
+たまいれ|玉入れ|🔴|ball-toss game|lancer de petits sacs au panier|juego de lanzar saquitos a la cesta|投球入篮比赛
+つなひき|綱引き|🪢|tug-of-war|tir à la corde|tira y afloja|拔河
+ときょうそう|徒競走|🏁|footrace|course à pied|carrera a pie|赛跑
+あかぐみ|赤組|🟥|red team|équipe rouge|equipo rojo|红队
+しろぐみ|白組|⬜|white team|équipe blanche|equipo blanco|白队
+こくご|国語|📖|Japanese (school subject)|japonais (matière)|lengua japonesa (asignatura)|国语课
+さんすう|算数|➕|arithmetic|calcul|aritmética|算术
+りか|理科|🧪|science (school subject)|sciences (matière)|ciencias (asignatura)|理科
+しゃかい|社会|🗺️|social studies|études sociales|ciencias sociales|社会课
+ずこう|図工|🎨|arts and crafts|arts plastiques|plástica|图画手工
+たいいく|体育|🤸|PE|sport (matière)|educación física|体育课
+しょしゃ|書写|🖌️|handwriting lessons|cours d'écriture|clases de caligrafía|书写课
+くく|九九|✖️|multiplication tables|tables de multiplication|tablas de multiplicar|九九乘法表
+じゆうけんきゅう|自由研究|🔬|summer free research project|projet de recherche libre|trabajo de investigación libre|自由研究
+えにっき|絵日記|📔|picture diary|journal illustré|diario ilustrado|图画日记
+どくしょかんそうぶん|読書感想文|📚|book report|fiche de lecture|comentario de un libro|读后感
+ラジオたいそう|ラジオ体操|📻|radio exercises|gymnastique à la radio|gimnasia con la radio|广播体操
 `,
-  phrases: [],
-  links: [],
+  phrases: [
+    line("{今日|きょう}の{給食|きゅうしょく}、なに?", "What's for lunch today?", "On mange quoi à la cantine aujourd'hui ?", "¿Qué hay de comer hoy?", "今天午餐吃什么?"),
+    line("{今週|こんしゅう}は{給食当番|きゅうしょくとうばん}だよ。", "I'm on lunch duty this week.", "Cette semaine, je suis de service à la cantine.", "Esta semana me toca el turno de comida.", "这周轮到我午餐值日。"),
+    line("おかわりしてもいいですか。", "May I have seconds?", "Je peux me resservir ?", "¿Puedo repetir?", "我可以再添一点吗?"),
+    line("ランドセル、{重|おも}いよ。", "My school bag is so heavy.", "Mon cartable est trop lourd.", "Cómo pesa la mochila.", "书包好重啊。"),
+    line("{一緒|いっしょ}に{学校|がっこう}{行|い}こう!", "Let's walk to school together!", "On va à l'école ensemble !", "¡Vamos juntos a la escuela!", "我们一起去学校吧!"),
+    line("{班長|はんちょう}さん、{待|ま}って!", "Wait for me, group leader!", "Attends-moi, chef de groupe !", "¡Espérame, jefe de grupo!", "组长,等等我!"),
+    line("{上履|うわば}き{忘|わす}れちゃった。", "I forgot my indoor shoes.", "J'ai oublié mes chaussons.", "Se me han olvidado las zapatillas.", "我忘带室内鞋了。"),
+    line("{先生|せんせい}、トイレに{行|い}ってもいいですか。", "Miss, may I go to the toilet?", "Maîtresse, je peux aller aux toilettes ?", "Profe, ¿puedo ir al baño?", "老师,我可以去厕所吗?"),
+    line("{掃除|そうじ}の{時間|じかん}だよ。ぞうきん{持|も}ってきて。", "It's cleaning time. Bring a cloth.", "C'est l'heure du ménage. Apporte un chiffon.", "Es la hora de limpiar. Trae un trapo.", "打扫时间到了,把抹布拿来。"),
+    line("{赤組|あかぐみ}、がんばれ!", "Go, red team!", "Allez, l'équipe rouge !", "¡Vamos, equipo rojo!", "红队加油!"),
+    line("{算数|さんすう}の{宿題|しゅくだい}、{教|おし}えて。", "Can you help me with my maths homework?", "Tu m'aides pour mes devoirs de calcul ?", "¿Me ayudas con los deberes de mates?", "教教我算术作业吧。"),
+    line("{自由研究|じゆうけんきゅう}、まだ{終|お}わってない…", "I still haven't finished my summer project...", "Je n'ai toujours pas fini mon projet de vacances...", "Todavía no he acabado el trabajo de verano...", "自由研究还没做完……"),
+  ],
+  links: [
+    link('photo', 'Wikimedia Commons', 'https://commons.wikimedia.org/wiki/Category:Randoseru', tr('Photos of randoseru school bags', 'Photos de cartables randoseru', 'Fotos de mochilas randoseru', '书包“兰德赛鲁”的照片')),
+    link('photo', 'Wikimedia Commons', 'https://commons.wikimedia.org/wiki/Category:School_lunch_in_Japan', tr('Photos of Japanese school lunches', 'Photos de repas scolaires japonais', 'Fotos de almuerzos escolares japoneses', '日本学校午餐的照片')),
+    link('photo', 'Wikimedia Commons', 'https://commons.wikimedia.org/wiki/Category:Elementary_schools_in_Japan', tr('Elementary school buildings and classrooms', "Bâtiments et salles de classe d'écoles primaires", 'Edificios y aulas de escuelas primarias', '小学校舍与教室')),
+    link('video', 'NHK for School', 'https://www2.nhk.or.jp/school/', tr("NHK's free video library for schools (in Japanese)", 'La vidéothèque scolaire gratuite de la NHK (en japonais)', 'La videoteca escolar gratuita de la NHK (en japonés)', 'NHK免费校园视频库(日语)')),
+    link('guide', 'Wikipedia', 'https://en.wikipedia.org/wiki/Elementary_schools_in_Japan', tr('Elementary schools in Japan', 'Les écoles primaires au Japon', 'Las escuelas primarias en Japón', '日本的小学')),
+    link('guide', 'Wikipedia', 'https://en.wikipedia.org/wiki/Randoseru', tr('The history of the randoseru', "L'histoire du randoseru", 'La historia de la randoseru', '“兰德赛鲁”书包的历史')),
+  ],
 };

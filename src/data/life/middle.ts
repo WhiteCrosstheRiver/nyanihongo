@@ -1,14 +1,114 @@
-import { tr, type LifeTopic } from './types';
+import { line, link, section, tr, type LifeTopic } from './types';
 
 export const MIDDLE: LifeTopic = {
   id: 'middle',
   emoji: '🏫',
   jp: 'ちゅうがっこう',
   title: tr('Middle school', 'Collège', 'Secundaria', '初中'),
-  intro: tr('', '', '', ''),
-  sections: [],
+  intro: tr(
+    "Hana is twelve now. The randoseru stays at home, a uniform hangs on her door, and suddenly everyone older than her is a senpai. These three years are the last of compulsory education, and for the first time she has to think about what comes next.",
+    "Hana a maintenant douze ans. Le randoseru reste à la maison, un uniforme est accroché à sa porte, et tous les plus âgés sont soudain des senpai. Ces trois années sont les dernières de la scolarité obligatoire et, pour la première fois, elle doit penser à la suite.",
+    "Hana ya tiene doce años. La randoseru se queda en casa, un uniforme cuelga de su puerta y, de repente, todos los mayores son senpai. Estos tres años son los últimos de la enseñanza obligatoria y, por primera vez, tiene que pensar en lo que viene después.",
+    "小花十二岁了。书包“兰德赛鲁”留在了家里，门上挂起了校服，比她年长的人一下子都成了“前辈”。这三年是义务教育的最后阶段，她也第一次要考虑将来的路。",
+  ),
+  sections: [
+    section('👔', tr('A new uniform', 'Un nouvel uniforme', 'Un uniforme nuevo', '新校服'), tr(
+      "In April, Hana stands in front of the mirror in a uniform bought a size too big, because she is expected to grow into it. Many public middle schools require one, unlike most elementary schools. Some keep the classic gakuran, a black jacket with a stand-up collar, and the navy sailor outfit, while others have moved to blazers. More schools now let any student choose trousers or a skirt, and rules on hair and socks are being reviewed in many places. On June 1 or thereabouts, the whole school changes into its summer uniform in a custom called koromogae, and on a warm morning the walk to school suddenly looks white and bright. Hana's indoor shoes now have a coloured stripe showing her year.",
+      "En avril, Hana se regarde dans le miroir, dans un uniforme acheté une taille trop grand parce qu'elle est censée grandir dedans. Beaucoup de collèges publics en exigent un, contrairement à la plupart des écoles primaires. Certains gardent le gakuran classique, une veste noire à col montant, et la tenue marine de style marin, tandis que d'autres sont passés au blazer. De plus en plus d'établissements laissent chacun choisir entre pantalon et jupe, et les règles sur les cheveux ou les chaussettes sont réexaminées dans bien des endroits. Vers le 1er juin, toute l'école passe à l'uniforme d'été, une coutume appelée koromogae, et le chemin de l'école devient soudain blanc et lumineux. Les chaussons de Hana portent désormais une bande de couleur qui indique son année.",
+      "En abril, Hana se mira al espejo con un uniforme comprado una talla más grande, porque se espera que crezca. Muchas secundarias públicas lo exigen, a diferencia de la mayoría de las primarias. Algunas conservan el clásico gakuran, una chaqueta negra de cuello alto, y el traje marinero azul marino, mientras que otras han pasado a la americana. Cada vez más escuelas dejan elegir entre pantalón y falda, y en muchos lugares se están revisando las normas sobre el pelo y los calcetines. Hacia el 1 de junio, toda la escuela cambia al uniforme de verano, una costumbre llamada koromogae, y el camino a clase se ve de pronto blanco y luminoso. Las zapatillas de Hana llevan ahora una franja de color que indica su curso.",
+      "四月，小花站在镜子前，身上的校服大了一号，因为大家都觉得她还会长高。与大多数小学不同，许多公立初中都要求穿校服。有的学校保留了经典的立领黑色“学兰”和藏青色水手服，有的已改成西装式校服。如今越来越多的学校让学生自由选择裤装或裙装，各地也在重新审视有关发型、袜子的规定。六月一日前后，全校换上夏季校服，这个习俗叫“衣替”，暖洋洋的早晨，上学路上一下子变得白亮起来。小花的室内鞋上还多了一道彩条，用来区分年级。",
+    )),
+    section('🏫', tr('Homeroom and a new way of learning', 'La classe principale et une nouvelle façon d’apprendre', 'La tutoría y otra forma de aprender', '班级与新的学习方式'), tr(
+      "Hana's class still has its own room, and the homeroom teacher runs a short meeting each morning and another before going home. What changes is that a different teacher now arrives for each subject, and arithmetic has grown up into mathematics. Pupils are numbered in grades one to three again, so she is a first grader once more. Class officers are chosen, students serve on committees for things like the library and health, and the student council organises events. Tests now come in a regular rhythm of mid-term and end-of-term exams, and a few days before each one, clubs stop so everyone can revise. Marks matter more too, since teachers record them in a report that later goes to high schools.",
+      "Hana a toujours sa salle de classe, et son professeur principal y tient une courte réunion chaque matin et une autre avant de partir. Ce qui change, c'est qu'un professeur différent vient pour chaque matière, et le calcul devient les mathématiques. Les années sont de nouveau numérotées de un à trois : la voilà encore en première année. On élit des délégués, chacun rejoint un comité (bibliothèque, santé...), et le conseil des élèves organise des événements. Les contrôles suivent désormais un rythme régulier, en milieu et en fin de trimestre, et quelques jours avant, les clubs s'arrêtent pour que tout le monde révise. Les notes comptent aussi davantage, car elles figurent dans un dossier envoyé plus tard aux lycées.",
+      "Hana sigue teniendo su aula, y el tutor dirige una breve reunión cada mañana y otra antes de volver a casa. Lo que cambia es que ahora viene un profesor distinto para cada asignatura, y la aritmética se convierte en matemáticas. Los cursos vuelven a numerarse del uno al tres, así que otra vez está en primero. Se eligen delegados, los alumnos participan en comités como el de biblioteca o el de salud, y el consejo de estudiantes organiza actividades. Los exámenes siguen ahora un ritmo fijo, a mitad y a final de trimestre, y unos días antes se paran los clubes para que todos repasen. Las notas también pesan más, porque quedan en un informe que más tarde se envía a los institutos.",
+      "小花的班级依然有固定的教室，班主任每天早上和放学前都会开一个简短的班会。变化在于，每门课都换了老师来上，“算术”也升级成了“数学”。年级重新从一到三排列，所以她又成了一年级学生。班里选出班干部，同学们分别参加图书、保健等委员会，学生会负责组织活动。考试也变得有规律，分为期中考试和期末考试，考前几天社团活动暂停，好让大家复习。成绩也更重要了，因为老师会把它记入日后交给高中的报告里。",
+    )),
+    section('🎺', tr('Club life with senpai and kohai', 'Le club, les senpai et les kohai', 'Los clubes, senpai y kohai', '社团与前后辈'), tr(
+      "Club activity, or bukatsu, is the heart of middle school for many students. Hana joins the concert band, and her day now stretches from morning practice before class to rehearsal until early evening. Friends choose tennis, volleyball, judo, art or science. Here she learns the senpai and kohai relationship: she bows to third graders, uses polite Japanese with them, and carries the heavy instruments. In return they teach her fingerings, lend her scores, and notice when she looks tired. Two years later she is the senpai, and she is surprised how much she enjoys helping a nervous first grader. Long practice hours have been widely discussed, so many schools now set rest days, and some weekend activities are moving to local clubs.",
+      "Le club, ou bukatsu, est le cœur du collège pour beaucoup d'élèves. Hana rejoint l'orchestre, et sa journée s'étend désormais de l'entraînement du matin à la répétition de fin d'après-midi. Ses amis choisissent le tennis, le volley, le judo, les arts plastiques ou les sciences. Elle y découvre la relation senpai et kohai : elle salue les élèves de troisième année, leur parle poliment et porte les instruments lourds. En échange, ils lui apprennent les doigtés, lui prêtent des partitions et remarquent quand elle a l'air fatiguée. Deux ans plus tard, c'est elle la senpai, et elle s'étonne d'aimer autant aider une petite nouvelle intimidée. Les longues heures d'entraînement ont fait débat : beaucoup d'écoles fixent désormais des jours de repos, et certaines activités du week-end passent à des clubs locaux.",
+      "El club, o bukatsu, es el corazón de la secundaria para muchos alumnos. Hana entra en la banda, y su día ahora va desde el ensayo de antes de clase hasta el de última hora de la tarde. Sus amigos eligen tenis, voleibol, judo, arte o ciencias. Allí aprende la relación senpai y kohai: saluda con una reverencia a los de tercero, les habla con cortesía y carga con los instrumentos pesados. A cambio, ellos le enseñan las digitaciones, le prestan partituras y notan cuando está cansada. Dos años después, la senpai es ella, y le sorprende lo mucho que le gusta ayudar a una novata nerviosa. Las largas horas de práctica han dado mucho que hablar, así que muchas escuelas fijan días de descanso, y algunas actividades de fin de semana están pasando a clubes locales.",
+      "对许多学生来说，社团活动“部活”是初中生活的核心。小花加入了管乐队，她的一天从课前的晨练一直延续到傍晚的排练。朋友们有的选网球、排球、柔道，有的选美术或科学。在这里，她学会了前辈与后辈的相处之道：向三年级学生鞠躬，对他们使用敬语，还负责搬重乐器。作为回报，前辈们教她指法，借给她乐谱，看到她累了也会关心。两年后，她自己成了前辈，才惊讶地发现，帮助紧张的新生竟是这么开心的事。长时间练习曾引发广泛讨论，因此许多学校现在规定了休息日，一些周末活动也逐渐转移到社区俱乐部。",
+    )),
+    section('🚄', tr('The school trip', 'Le voyage scolaire', 'El viaje escolar', '修学旅行'), tr(
+      "The shugaku ryoko is the memory many adults treasure most. In her final year, Hana's whole grade boards a train for a trip of a few days, and Kyoto and Nara are the classic destination, though many schools visit Tokyo, Hiroshima, Okinawa or elsewhere. For weeks beforehand, small groups research a route and make a booklet with the timetable, the rules and a list of temples. In Kyoto, Hana's group takes a bus up to Kiyomizu-dera and gets slightly lost looking for souvenirs. At night, everyone shares a big tatami room in an inn, the teachers do their rounds, and the whispering goes on long after lights out. The next morning, nobody can remember who fell asleep first.",
+      "Le shugaku ryoko est le souvenir que bien des adultes chérissent le plus. En dernière année, toute la promotion de Hana prend le train pour quelques jours. Kyoto et Nara sont la destination classique, même si de nombreuses écoles vont à Tokyo, à Hiroshima, à Okinawa ou ailleurs. Pendant des semaines, de petits groupes préparent un itinéraire et un livret avec l'horaire, les règles et une liste de temples. À Kyoto, le groupe de Hana monte en bus au Kiyomizu-dera et se perd un peu en cherchant des souvenirs. Le soir, tout le monde dort dans une grande chambre à tatamis d'une auberge, les professeurs font leur ronde, et les chuchotements durent longtemps après l'extinction des lumières. Le lendemain, personne ne sait plus qui s'est endormi en premier.",
+      "El shugaku ryoko es el recuerdo que muchos adultos guardan con más cariño. En el último curso, toda la promoción de Hana sube a un tren para pasar unos días fuera. Kioto y Nara son el destino clásico, aunque muchas escuelas van a Tokio, Hiroshima, Okinawa u otros lugares. Durante semanas, pequeños grupos preparan una ruta y un cuadernillo con el horario, las normas y una lista de templos. En Kioto, el grupo de Hana sube en autobús a Kiyomizu-dera y se pierde un poco buscando recuerdos. Por la noche, todas comparten una gran habitación de tatami en una posada, los profesores hacen la ronda y los susurros siguen mucho después de apagar la luz. A la mañana siguiente, nadie recuerda quién se durmió primero.",
+      "修学旅行是许多成年人最珍惜的回忆。到了最后一学年，小花全年级一起坐上火车，外出几天。京都和奈良是经典目的地，不过也有很多学校去东京、广岛、冲绳等地。出发前几周，各小组就开始研究路线，制作写有日程、规定和寺庙清单的小册子。在京都，小花一组坐巴士上清水寺，又因为找纪念品差点迷路。晚上，大家睡在旅馆宽敞的榻榻米房间里，老师来回巡查，熄灯后悄悄话还说个不停。第二天早上，谁也不记得是谁先睡着的。",
+    )),
+    section('📝', tr('Getting ready for high school', 'Préparer le lycée', 'Prepararse para el instituto', '备战升高中'), tr(
+      "High school is not compulsory, yet almost everyone goes, so third grade brings a new word: juken, entrance exams. After summer, when clubs finish with a last tournament, attention turns to practice tests and to the shinro, the path ahead. Hana sits down with her parents and teacher for a three-way meeting to talk about which schools might suit her, and she visits a few open days. Many classmates attend juku, evening classes after school, while others study at home or with online lessons. Public high schools generally look at both an exam and the school report, so steady work counts as well as the final push. It can be a tiring year, but friends quiz each other at lunch, and teachers remind them there is more than one good path.",
+      "Le lycée n'est pas obligatoire, mais presque tout le monde y va ; la troisième année apporte donc un mot nouveau : juken, les examens d'entrée. Après l'été, quand les clubs se terminent sur un dernier tournoi, on passe aux examens blancs et au shinro, le chemin à venir. Hana rencontre ses parents et son professeur pour un entretien à trois afin de voir quels lycées lui conviendraient, et elle assiste à quelques journées portes ouvertes. Beaucoup de camarades vont au juku, des cours du soir, d'autres travaillent chez eux ou en ligne. Les lycées publics regardent en général à la fois l'examen et le dossier scolaire : le travail régulier compte autant que le sprint final. L'année peut être fatigante, mais les amis s'interrogent à midi, et les professeurs rappellent qu'il existe plus d'un bon chemin.",
+      "El instituto no es obligatorio, pero casi todo el mundo va, así que tercero trae una palabra nueva: juken, los exámenes de ingreso. Tras el verano, cuando los clubes terminan con un último torneo, la atención pasa a los exámenes de prueba y al shinro, el camino que viene. Hana se reúne con sus padres y su tutor en una entrevista a tres para hablar de qué centros le convienen, y visita algunas jornadas de puertas abiertas. Muchos compañeros van al juku, clases por la tarde después del colegio, y otros estudian en casa o en línea. Los institutos públicos suelen tener en cuenta tanto el examen como el informe escolar, así que el trabajo constante cuenta tanto como el esfuerzo final. Puede ser un año cansado, pero los amigos se preguntan la lección en el almuerzo y los profesores recuerdan que hay más de un buen camino.",
+      "高中不属于义务教育，但几乎人人都上，所以到了三年级，大家都会碰到一个新词：“受验”，也就是升学考试。夏天过后，社团以最后一场比赛结束活动，大家的注意力转向模拟考和“进路”，也就是今后的方向。小花和父母、老师一起开三方面谈，商量哪些学校适合自己，还去参观了几所学校的开放日。很多同学放学后去补习班“塾”，也有人在家自学或上网课。公立高中一般既看考试成绩，也看学校的评价报告，所以平时的努力和最后的冲刺同样重要。这一年可能有些累，但朋友们午休时互相提问，老师也提醒大家：好的道路不止一条。",
+    )),
+    section('🌸', tr('The end of compulsory education', 'La fin de la scolarité obligatoire', 'El fin de la enseñanza obligatoria', '义务教育的结束'), tr(
+      "Compulsory education in Japan lasts nine years, six in elementary school and three in middle school, and ends in March of the year a student has turned fifteen. Results for public high schools tend to come just around graduation, so the mood can swing between tears and laughter in a single week. At the ceremony, each student walks up to receive a diploma, then the class sings one last time. Afterwards, everyone lingers in the yard to take photos and fill each other's albums with messages. A younger club member shyly asks Hana for a button from her jacket, and she laughs and hands it over. For the first time, her friends will scatter to different schools, and she walks home the long way.",
+      "Au Japon, la scolarité obligatoire dure neuf ans, six à l'école primaire et trois au collège, et se termine en mars de l'année où l'élève a eu quinze ans. Les résultats des lycées publics tombent souvent autour de la remise des diplômes, si bien qu'on passe des larmes au rire dans la même semaine. Lors de la cérémonie, chacun monte recevoir son diplôme, puis la classe chante une dernière fois. Ensuite, tout le monde s'attarde dans la cour pour prendre des photos et s'écrire des messages dans les albums. Une plus jeune du club demande timidement un bouton de sa veste à Hana, qui rit et le lui donne. Pour la première fois, ses amis vont partir dans des écoles différentes, et elle rentre chez elle par le chemin le plus long.",
+      "En Japón la enseñanza obligatoria dura nueve años, seis en primaria y tres en secundaria, y termina en marzo del año en que el alumno ha cumplido quince. Los resultados de los institutos públicos suelen llegar en torno a la graduación, así que en una misma semana se pasa de las lágrimas a la risa. En la ceremonia, cada alumno sube a recoger su diploma y luego la clase canta por última vez. Después, todos se quedan en el patio haciéndose fotos y escribiéndose mensajes en los álbumes. Una compañera más joven del club le pide con timidez un botón de la chaqueta a Hana, que se ríe y se lo da. Por primera vez, sus amigas irán a escuelas distintas, y ella vuelve a casa por el camino largo.",
+      "日本的义务教育共九年，小学六年，初中三年，到学生年满十五岁那个学年的三月结束。公立高中的录取结果往往就在毕业前后公布，所以一周之内常常又哭又笑。毕业典礼上，学生逐一上台领取毕业证书，全班最后一次合唱。典礼结束后，大家留在校园里拍照，在纪念册上互相写下留言。社团里的学妹害羞地向小花要校服上的纽扣，她笑着递了过去。这是朋友们第一次要分散到不同的学校，小花特意绕远路慢慢走回家。",
+    )),
+  ],
   words: `
+がくらん|学ラン|🧥|black stand-collar school jacket|veste d'uniforme à col montant|chaqueta de uniforme de cuello alto|立领学生制服
+セーラーふく|セーラー服|⚓|sailor-style school uniform|uniforme de style marin|uniforme marinero|水手服
+ブレザー||🧥|blazer|blazer|americana|西装外套
+ころもがえ|衣替え|👕|seasonal change of uniform|changement d'uniforme de saison|cambio de ropa de temporada|换季换装
+こうそく|校則|📜|school rules|règlement de l'école|normas de la escuela|校规
+たんにん|担任|🧑‍🏫|homeroom teacher|professeur principal|tutor de clase|班主任
+がっきゅういいん|学級委員|🙋|class representative|délégué de classe|delegado de clase|班长
+いいんかい|委員会|🪑|school committee|comité d'élèves|comité de alumnos|委员会
+せいとかい|生徒会|🗳️|student council|conseil des élèves|consejo de estudiantes|学生会
+あさのかい|朝の会|🌤️|morning class meeting|réunion de classe du matin|reunión de clase de la mañana|晨会
+かえりのかい|帰りの会|🌇|end-of-day class meeting|réunion de classe du soir|reunión de clase de la tarde|放学前班会
+ちゅうかんテスト|中間テスト|📝|mid-term exam|contrôle de mi-trimestre|examen parcial|期中考试
+きまつテスト|期末テスト|🖊️|end-of-term exam|contrôle de fin de trimestre|examen final de trimestre|期末考试
+つうしんぼ|通信簿|📒|school report card|bulletin scolaire|boletín de notas|成绩单
+ぶかつ|部活|⚾|school club activity|activité de club|actividad de club|社团活动
+せんぱい|先輩|🙇|senior student, senpai|élève plus âgé, senpai|compañero mayor, senpai|前辈,学长学姐
+こうはい|後輩|🐣|junior student, kohai|élève plus jeune, kohai|compañero menor, kohai|后辈,学弟学妹
+こもん|顧問|🧑‍🏫|club adviser (teacher)|professeur responsable d'un club|profesor encargado del club|社团指导老师
+うんどうぶ|運動部|⚽|sports club|club de sport|club deportivo|运动类社团
+ぶんかぶ|文化部|🎭|arts or culture club|club culturel|club cultural|文化类社团
+すいそうがくぶ|吹奏楽部|🎺|concert band club|club d'orchestre d'harmonie|club de banda|管乐社
+あされん|朝練|🌅|morning practice|entraînement du matin|entrenamiento matutino|晨练
+こうしきせん|公式戦|🏆|official match|match officiel|partido oficial|正式比赛
+いんたい|引退|👋|retiring from a club|départ du club (en fin de parcours)|retirarse del club|退出社团,引退
+しゅうがくりょこう|修学旅行|🚄|school trip|voyage scolaire|viaje escolar|修学旅行
+しおり|栞|🔖|trip booklet, bookmark|livret de voyage, marque-page|cuadernillo del viaje, marcapáginas|旅行手册,书签
+はんこうどう|班行動|🗺️|free time in small groups|sortie en petit groupe|actividad en grupo pequeño|分组活动
+まくらなげ|枕投げ|🛌|pillow fight|bataille de polochons|guerra de almohadas|枕头大战
+しょうとう|消灯|💡|lights out|extinction des lumières|apagar las luces|熄灯
+しんろ|進路|🧭|future path after school|orientation, voie choisie|camino tras la escuela|今后的方向,出路
+さんしゃめんだん|三者面談|👨‍👩‍👧|student-parent-teacher meeting|entretien élève-parent-professeur|reunión de alumno, padres y tutor|三方面谈
+じゅけん|受験|✏️|taking an entrance exam|passer un examen d'entrée|presentarse a un examen de ingreso|参加升学考试
+じゅけんせい|受験生|📚|student preparing for entrance exams|candidat aux examens d'entrée|estudiante que prepara exámenes de ingreso|备考生
+じゅく|塾|🏫|cram school, evening classes|cours du soir, juku|academia de refuerzo|补习班
+もし|模試|📄|practice exam|examen blanc|examen de prueba|模拟考试
+ないしんしょ|内申書|📊|school report sent to high schools|dossier scolaire envoyé aux lycées|informe escolar para el instituto|高中报考用评价报告
+ぎむきょういく|義務教育|📘|compulsory education|scolarité obligatoire|enseñanza obligatoria|义务教育
+そつぎょうしょうしょ|卒業証書|📜|graduation diploma|diplôme de fin d'études|diploma de graduación|毕业证书
 `,
-  phrases: [],
-  links: [],
+  phrases: [
+    line("{先輩|せんぱい}、お{疲|つか}れさまです!", "Thanks for all your hard work, senpai!", "Bon travail, senpai !", "¡Buen trabajo, senpai!", "前辈,您辛苦了!"),
+    line("{部活|ぶかつ}、どこに{入|はい}るか{決|き}めた?", "Have you decided which club to join?", "Tu as choisi ton club ?", "¿Ya has decidido a qué club apuntarte?", "你决定加入哪个社团了吗?"),
+    line("{明日|あした}、{朝練|あされん}あるから{早|はや}く{寝|ね}なきゃ。", "I've got morning practice tomorrow, so I need an early night.", "J'ai entraînement demain matin, je dois me coucher tôt.", "Mañana tengo entrenamiento temprano, así que debo acostarme pronto.", "明天有晨练,我得早点睡。"),
+    line("{来週|らいしゅう}からテスト{期間|きかん}だって。", "Apparently test period starts next week.", "Il paraît que les contrôles commencent la semaine prochaine.", "Dicen que la semana que viene empiezan los exámenes.", "听说下周就开始考试周了。"),
+    line("ネクタイ、{曲|ま}がってるよ。", "Your tie is crooked.", "Ta cravate est de travers.", "Llevas la corbata torcida.", "你的领带歪了。"),
+    line("{塾|じゅく}の{宿題|しゅくだい}、やった?", "Did you do your juku homework?", "Tu as fait tes devoirs du juku ?", "¿Has hecho los deberes de la academia?", "补习班的作业你写了吗?"),
+    line("{三者面談|さんしゃめんだん}、{緊張|きんちょう}するなあ。", "I'm so nervous about the meeting with my parents and teacher.", "Ça me stresse, l'entretien avec mes parents et le prof.", "Qué nervios la reunión con mis padres y el tutor.", "三方面谈,好紧张啊。"),
+    line("{志望校|しぼうこう}、もう{決|き}めた?", "Have you picked which high school you want?", "Tu as choisi ton lycée ?", "¿Ya sabes a qué instituto quieres ir?", "你想考的学校定了吗?"),
+    line("{修学旅行|しゅうがくりょこう}の{班|はん}、{一緒|いっしょ}になろうよ。", "Let's be in the same group for the school trip.", "On se met dans le même groupe pour le voyage scolaire ?", "Vamos a ponernos en el mismo grupo para el viaje.", "修学旅行我们分在一组吧。"),
+    line("{京都|きょうと}でどこに{行|い}きたい?", "Where do you want to go in Kyoto?", "Tu veux aller où à Kyoto ?", "¿Adónde quieres ir en Kioto?", "在京都你想去哪儿?"),
+    line("{引退|いんたい}{試合|じあい}、{絶対|ぜったい}{勝|か}とう!", "Let's win our final match, no matter what!", "On gagne notre dernier match, quoi qu'il arrive !", "¡Vamos a ganar nuestro último partido sí o sí!", "最后一场比赛,一定要赢!"),
+    line("{卒業|そつぎょう}しても、ずっと{友達|ともだち}だよ。", "We'll always be friends, even after graduation.", "On restera amis, même après le collège.", "Seremos amigas siempre, aunque nos graduemos.", "就算毕业了,我们也永远是朋友。"),
+  ],
+  links: [
+    link('photo', 'Wikimedia Commons', 'https://commons.wikimedia.org/wiki/Category:Junior_high_schools_in_Japan', tr('Junior high school buildings across Japan', 'Des collèges à travers le Japon', 'Edificios de secundaria por todo Japón', '日本各地的初中校舍')),
+    link('photo', 'Wikimedia Commons', 'https://commons.wikimedia.org/wiki/Category:Kiyomizu-dera', tr('Kiyomizu-dera, a classic school trip stop in Kyoto', 'Le Kiyomizu-dera, étape classique des voyages scolaires à Kyoto', 'Kiyomizu-dera, parada clásica de los viajes escolares en Kioto', '清水寺:京都修学旅行的经典一站')),
+    link('video', 'MEXT (YouTube)', 'https://www.youtube.com/@MEXTchannel', tr("The education ministry's official channel (in Japanese)", 'La chaîne officielle du ministère de l’Éducation (en japonais)', 'El canal oficial del Ministerio de Educación (en japonés)', '日本文部科学省官方频道(日语)')),
+    link('guide', 'MEXT', 'https://www.mext.go.jp/en/policy/education/overview/index.htm', tr('Overview of the Japanese school system', 'Présentation du système scolaire japonais', 'Panorama del sistema escolar japonés', '日本学校制度概览')),
+    link('guide', 'Wikipedia', 'https://en.wikipedia.org/wiki/Japanese_school_uniform', tr('The history of Japanese school uniforms', "L'histoire des uniformes scolaires japonais", 'La historia de los uniformes escolares japoneses', '日本校服的历史')),
+    link('guide', 'Wikipedia', 'https://en.wikipedia.org/wiki/Senpai_and_k%C5%8Dhai', tr('Senpai and kohai explained', 'Senpai et kohai expliqués', 'Qué significan senpai y kohai', '什么是前辈与后辈')),
+  ],
 };

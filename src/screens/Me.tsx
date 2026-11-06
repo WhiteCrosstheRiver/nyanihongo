@@ -127,6 +127,7 @@ export function MeScreen() {
           <div className="card credits">
             <p>Kana stroke data: KanjiVG, © Ulrich Apel and contributors, CC BY-SA 3.0.</p>
             <p>Image recognition: MobileNet V2, TensorFlow, Apache 2.0.</p>
+            <p>Map of Japan: made with Natural Earth (public domain).</p>
             <p>Fonts: Zen Maru Gothic, SIL OFL 1.1. Emoji: Twemoji, © Twitter and contributors, CC BY 4.0.</p>
           </div>
         </section>
