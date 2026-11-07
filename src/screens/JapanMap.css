@@ -20,6 +20,18 @@
 }
 .jm-map svg { display: block; width: 100%; height: auto; }
 .jm-zoom { transition: transform .35s ease; }
+.jm { --sea-line: color-mix(in srgb, var(--ink) 9%, transparent); }
+.jm-sea { fill: color-mix(in srgb, var(--sky) 55%, var(--surface)); }
+.jm-layers { margin-bottom: 8px; }
+.jm-scene text { fill: var(--ink); opacity: .34; font-size: 34px; font-weight: 700; letter-spacing: 6px; text-anchor: middle; pointer-events: none; }
+.jm-fuji { pointer-events: none; }
+.jm-fuji path { fill: #6f7f9e; stroke: #fff; stroke-width: 1.2px; }
+.jm-fuji .snow { fill: #fff; }
+.jm-pins text { font-size: 42px; text-anchor: middle; pointer-events: none; }
+.jm-local-item { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+.jm-fests { margin: 4px 0 0; padding: 0; list-style: none; }
+.jm-fests li { padding: 2px 0; }
+.jm-fests small { color: var(--muted); }
 
 .jm-p {
   stroke: var(--ink); stroke-opacity: .38; stroke-width: .7px; stroke-linejoin: round; vector-effect: non-scaling-stroke;

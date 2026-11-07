@@ -1,9 +1,13 @@
 import { useMemo, useRef, useState, type KeyboardEvent } from 'react';
 import geo from '../data/life/japan-map.json';
 import { PREFECTURES, REGION_LIST, prefectureById, type Prefecture, type RegionId } from '../data/life/prefectures';
+import { FESTIVAL_DATA } from '../data/life/calendar';
+import { FIGURES } from '../data/life/figures';
+import { LOCAL, type LocalItem } from '../data/life/localfood';
 import { useT, type Lang } from '../lib/i18n';
 import { useStore } from '../lib/store';
 import { Feedback, Mascot, Quiz, SpeakButton, shuffle, type QuizApi } from '../ui/parts';
+import { whenText } from './FestivalWheel';
 import './JapanMap.css';
 
 interface Shape { c: number[]; b: number[]; d: string }
@@ -39,6 +43,12 @@ const S: Record<string, Record<Lang, string>> = {
     es: 'Este es un mapa de estudio simplificado, no una declaración sobre fronteras. Se omiten algunas islas pequeñas y alejadas, entre ellas los Territorios del Norte (Kuriles del Sur), Takeshima (Dokdo), las islas Senkaku (islas Diaoyu), Amami y Ogasawara. Okinawa aparece en un recuadro y su forma es solo un esbozo.',
     zh: '这是一张简化的学习地图，不代表对边界的任何立场。图中省略了部分较小和偏远的岛屿，包括北方领土（南千岛群岛）、竹岛（独岛）、尖阁诸岛（钓鱼岛）、奄美群岛和小笠原群岛。冲绳被移到方框内，形状仅为示意。',
   },
+  layers: { en: 'Show on the map', fr: 'Afficher sur la carte', es: 'Mostrar en el mapa', zh: '地图显示' },
+  plain: { en: 'Regions', fr: 'Régions', es: 'Regiones', zh: '地区' },
+  fest: { en: 'Festivals', fr: 'Festivals', es: 'Festivales', zh: '祭典' },
+  food: { en: 'Local food', fr: 'Cuisine locale', es: 'Comida local', zh: '地方美食' },
+  craft: { en: 'Crafts', fr: 'Artisanat', es: 'Artesanía', zh: '传统工艺' },
+  folk: { en: 'Folk figures', fr: 'Figurines', es: 'Figuras', zh: '民俗人偶' },
   region: { en: 'Region', fr: 'Région', es: 'Región', zh: '地区' },
   capital: { en: 'Capital', fr: 'Chef-lieu', es: 'Capital', zh: '首府' },
   known: { en: 'Known for', fr: 'Connue pour', es: 'Conocida por', zh: '著名之处' },
@@ -54,6 +64,45 @@ const S: Record<string, Record<Lang, string>> = {
 };
 
 const shape = (id: string) => MAP.prefectures[id];
+
+type Layer = 'plain' | 'fest' | 'food' | 'craft' | 'folk';
+const LAYERS: Layer[] = ['plain', 'fest', 'food', 'craft', 'folk'];
+const FIGURE_EMOJI: Record<string, string> = { daruma: '🔴', maneki: '🐱', kokeshi: '🪆', akabeko: '🐮', tanuki: '🦝', hina: '🎎', okiagari: '🔴', kitsune: '🦊', shisa: '🦁', dogu: '🗿', haniwa: '🏺', koinobori: '🎏', namahage: '👹' };
+
+/** The picture on a prefecture for the chosen map layer, if there is one. */
+function pinFor(id: string, layer: Layer) {
+  if (layer === 'food') return LOCAL[id].food.emoji;
+  if (layer === 'craft') return LOCAL[id].craft.emoji;
+  if (layer === 'fest') return FESTIVAL_DATA.find((f) => f.pref === id)?.emoji;
+  if (layer === 'folk') { const f = FIGURES.find((x) => x.pref === id); return f && FIGURE_EMOJI[f.id]; }
+  return undefined;
+}
+
+function Pins({ layer }: { layer: Layer }) {
+  return (
+    <g className="jm-pins" aria-hidden="true">
+      {PREFECTURES.map((x) => {
+        const pin = pinFor(x.id, layer);
+        return pin ? <text key={x.id} x={shape(x.id).c[0]} y={shape(x.id).c[1] + 15}>{pin}</text> : null;
+      })}
+    </g>
+  );
+}
+
+/** Seas and Mount Fuji make the map feel like a place. They are labels only and cannot be tapped. */
+const Scenery = () => (
+  <g className="jm-scene" aria-hidden="true" lang="ja">
+    <text x="330" y="470">日本海</text>
+    <text x="830" y="800">太平洋</text>
+    <text x="110" y="1170">東シナ海</text>
+  </g>
+);
+const Fuji = () => (
+  <g className="jm-fuji" aria-hidden="true">
+    <path d="M594 768 L612 736 L630 768 Z" />
+    <path className="snow" d="M606 747 L612 736 L618 747 L613 744 Z" />
+  </g>
+);
 
 /** Move and scale the map so one region fills the view. Works on the drawing, so it can animate. */
 function zoomOn(region: RegionId | null) {
@@ -85,8 +134,9 @@ function nextInDirection(from: string, key: string, ids: string[]) {
   return best;
 }
 
-function MapView({ region, selected, good, bad, onPick }: {
+function MapView({ region, layer = 'plain', selected, good, bad, onPick }: {
   region: RegionId | null;
+  layer?: Layer;
   selected?: string | null;
   good?: string | null;
   bad?: string | null;
@@ -112,7 +162,15 @@ function MapView({ region, selected, good, bad, onPick }: {
   return (
     <div className="jm-map">
       <svg viewBox={`0 0 ${MAP.width} ${MAP.height}`} role="group" aria-label={S.map[lang]}>
+        <defs>
+          <pattern id="jm-waves" width="90" height="46" patternUnits="userSpaceOnUse">
+            <path d="M0 23 Q22 8 45 23 T90 23" fill="none" stroke="var(--sea-line)" strokeWidth="2" />
+          </pattern>
+        </defs>
+        <rect className="jm-sea" width={MAP.width} height={MAP.height} />
+        <rect width={MAP.width} height={MAP.height} fill="url(#jm-waves)" />
         <g className="jm-zoom" style={{ transform: zoomOn(region) }}>
+          <Scenery />
           <g className={region && region !== 'kyushu' ? 'jm-dim' : undefined} aria-hidden="true">
             <rect className="jm-inset" x={MAP.inset.x} y={MAP.inset.y} width={MAP.inset.w} height={MAP.inset.h} rx="20" />
             <text className="jm-inset-label" x={MAP.inset.x + 14} y={MAP.inset.y + 36} lang="ja">沖縄</text>
@@ -131,6 +189,8 @@ function MapView({ region, selected, good, bad, onPick }: {
           {overlay(good, 'good')}
           {overlay(bad, 'bad')}
           {overlay(focused, 'focus')}
+          <Fuji />
+          <Pins layer={layer} />
         </g>
       </svg>
     </div>
@@ -153,6 +213,18 @@ function RegionChips({ region, onChange }: { region: RegionId | null; onChange: 
 
 const Name = ({ x }: { x: { written: string; kana: string } }) => (
   <ruby lang="ja">{x.written}<rt>{x.kana}</rt></ruby>
+);
+
+const Local = ({ title, item }: { title: string; item: LocalItem }) => (
+  <div className="jm-local-item">
+    <span className="emoji-mid" aria-hidden="true">{item.emoji}</span>
+    <span className="jm-name">
+      <small>{title}</small>
+      <b><ruby lang="ja">{item.written}<rt>{item.written === item.kana ? '' : item.kana}</rt></ruby></b>
+      <small>{item.tr[useT().lang]}</small>
+    </span>
+    <SpeakButton text={item.kana} />
+  </div>
 );
 
 function Detail({ pref }: { pref: Prefecture | null }) {
@@ -188,6 +260,20 @@ function Detail({ pref }: { pref: Prefecture | null }) {
       </dl>
       <h3>{S.known[lang]}</h3>
       <p>{pref.knownFor[lang]}</p>
+      <Local title={S.food[lang]} item={LOCAL[pref.id].food} />
+      <Local title={S.craft[lang]} item={LOCAL[pref.id].craft} />
+      {FESTIVAL_DATA.some((f) => f.pref === pref.id) && <>
+        <h3>{S.fest[lang]}</h3>
+        <ul className="jm-fests">
+          {FESTIVAL_DATA.filter((f) => f.pref === pref.id).map((f) => (
+            <li key={f.id}><span aria-hidden="true">{f.emoji}</span> <span lang="ja">{f.written}</span> <small>{whenText(f, lang)}</small></li>
+          ))}
+        </ul>
+      </>}
+      {FIGURES.some((f) => f.pref === pref.id) && <>
+        <h3>{S.folk[lang]}</h3>
+        <p>{FIGURES.filter((f) => f.pref === pref.id).map((f) => f.name[lang]).join(' · ')}</p>
+      </>}
     </div>
   );
 }
@@ -245,6 +331,7 @@ export function JapanMap() {
   const [region, setRegion] = useState<RegionId | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
   const [game, setGame] = useState(false);
+  const [layer, setLayer] = useState<Layer>('plain');
   const pref = selected ? prefectureById(selected) ?? null : null;
   const listed = PREFECTURES.filter((x) => !region || x.region === region);
 
@@ -258,7 +345,12 @@ export function JapanMap() {
     <section className="jm">
       <div className="jm-layout">
         <div className="jm-main">
-          <MapView region={region} selected={selected} onPick={setSelected} />
+          <div className="chips jm-layers" role="group" aria-label={S.layers[lang]}>
+            {LAYERS.map((l) => (
+              <button key={l} className={`chip ${layer === l ? 'on' : ''}`} aria-pressed={layer === l} onClick={() => setLayer(l)}>{S[l][lang]}</button>
+            ))}
+          </div>
+          <MapView region={region} layer={layer} selected={selected} onPick={setSelected} />
           <RegionChips region={region} onChange={chooseRegion} />
           <p className="note">{S.tip[lang]}</p>
           <p className="note">{S.simplified[lang]}</p>

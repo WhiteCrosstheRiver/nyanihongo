@@ -7,18 +7,25 @@ import { toHiragana } from '../lib/romaji';
 import { useStore } from '../lib/store';
 import { Choices, Feedback, Header, KanaInput, Quiz, Ruby, plainWritten, shuffle, type QuizApi } from '../ui/parts';
 import type { Nav } from '../App';
+import { tr } from '../data/life/types';
+import type { VisualLesson } from './visual/lessons';
+import { VisualLessonView, VisualMenu } from './visual/VisualGrammar';
 
 const TOTAL = 10;
 type Mode = 'menu' | 'particles' | 'adjectives' | 'guide';
+const SEE = tr('See how it works', 'Voir comment ça marche', 'Mira cómo funciona', '看懂原理');
+const DRILL = tr('Practise', 'S’entraîner', 'Practicar', '练习');
 
 export function GrammarScreen({ go }: { go: Nav }) {
   const { t, lang } = useT();
   const [mode, setMode] = useState<Mode>('menu');
   const [seed, setSeed] = useState(0);
+  const [visual, setVisual] = useState<VisualLesson | null>(null);
   const particles = useMemo(() => shuffle(PARTICLE_ITEMS).slice(0, TOTAL), [seed]);
   const adjectives = useMemo(() => Array.from({ length: TOTAL }, () => makeAdjItem()), [seed]);
   const menu = () => setMode('menu');
 
+  if (visual) return <VisualLessonView key={visual.id} lesson={visual} onExit={() => setVisual(null)} />;
   if (mode === 'particles') {
     return (
       <div>
@@ -55,6 +62,9 @@ export function GrammarScreen({ go }: { go: Nav }) {
   return (
     <div>
       <Header title={t('grammar')} onBack={() => go('home')} />
+      <h2>{SEE[lang]}</h2>
+      <VisualMenu onOpen={setVisual} />
+      <h2>{DRILL[lang]}</h2>
       <button className="lesson-row card" onClick={() => setMode('particles')}>
         <span className="emoji-mid" lang="ja">🧩</span>
         <span><b>{t('particles')}</b><small>{t('particlesDesc')}</small></span>

@@ -25,6 +25,8 @@ The tools live in `%LOCALAPPDATA%\DevTools` (`node`, `jdk`, `android-sdk`). Node
 - `src/data/`: vocabulary, verbs, forms, stories and the ImageNet-to-word map (`recognition.ts`)
 - `src/screens/`: one file per section
 - `src/data/life/`: Life in Japan topics; each is a `LifeTopic`, and its words join the review system. `LIFE_TOPIC=<id> npx vitest run src/lib/life.test.ts` checks one topic
+- `src/screens/visual/`: interactive grammar lessons. `scenes.tsx` holds the moving pictures, `lessons.ts` the steps and prediction questions; `src/lib/visual.test.ts` checks their forms against the conjugation engine
+- `src/data/life/calendar.ts`, `localfood.ts`, `figures.ts`: festival calendar, life milestones, a dish and craft for each prefecture, and folk figures (drawn in `src/screens/Figurines.tsx`)
 - `electron/main.cjs`: desktop shell
 - `android/`: Capacitor project
 - `public/models/mobilenet/`: offline image model

@@ -8,6 +8,8 @@ import { useStore } from '../lib/store';
 import { Header, Mascot, Progress, Quiz, Ruby, SpeakButton, plainWritten, shuffle } from '../ui/parts';
 import type { Nav } from '../App';
 import { ReviewQ } from './Daily';
+import { FestivalWheel } from './FestivalWheel';
+import { FolkShelf, LifeStages } from './Figurines';
 import { JapanMap } from './JapanMap';
 
 const KIND: Record<LifeLink['kind'], [string, Key]> = {
@@ -79,6 +81,8 @@ function Topic({ topic, onExit }: { topic: LifeTopic; onExit: () => void }) {
         <p>{topic.intro[lang]}</p>
       </div>
       {topic.id === 'regions' && <JapanMap />}
+      {topic.id === 'festivals' && <FestivalWheel />}
+      {topic.id === 'folk' && <><FolkShelf /><LifeStages /></>}
       {topic.sections.map((s) => (
         <section className="card life-section" key={s.title.en}>
           <h3><span>{s.emoji}</span> {s.title[lang]}</h3>

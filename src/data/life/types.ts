@@ -1,7 +1,7 @@
 import type { Line, Tr } from '../reading';
 
 export type LifeId =
-  | 'jpfood' | 'jpclothing' | 'jpgoods' | 'regions' | 'festivals' | 'city' | 'names'
+  | 'jpfood' | 'jpclothing' | 'jpgoods' | 'regions' | 'festivals' | 'folk' | 'city' | 'names'
   | 'elementary' | 'middle' | 'high' | 'university';
 
 /** An online extra. Links open in the browser; nothing from them is copied into the app. */
