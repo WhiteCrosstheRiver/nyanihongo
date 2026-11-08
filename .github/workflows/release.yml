@@ -1,0 +1,98 @@
+# Every push to main rebuilds the Windows installer and Android APK and publishes them.
+# The release is named after the version in package.json: pushes refresh that release,
+# and raising the version starts a new one, so older versions stay available.
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['**.md']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: true
+
+jobs:
+  release:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    env:
+      SIGNING_KEY: ${{ secrets.ANDROID_DEBUG_KEYSTORE }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Install
+        run: npm ci
+
+      - name: Test
+        run: npm test
+
+      - name: Read version
+        run: echo "VERSION=$(node -p "require('./package.json').version")" >> "$GITHUB_ENV"
+
+      - name: Build Windows installer
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+        run: npm run dist:win -- --publish never
+
+      # Android only accepts an update signed with the same key as the installed app.
+      - name: Restore Android signing key
+        if: env.SIGNING_KEY != ''
+        run: |
+          mkdir -p "$HOME/.android"
+          echo "$SIGNING_KEY" | base64 -d > "$HOME/.android/debug.keystore"
+
+      - name: Build Android APK
+        run: |
+          npx cap sync android
+          cd android
+          ./gradlew.bat assembleDebug
+
+      - name: Collect files
+        run: |
+          mkdir out
+          cp "release/Nyanihongo-Setup-$VERSION.exe" out/
+          cp android/app/build/outputs/apk/debug/app-debug.apk "out/Nyanihongo-$VERSION.apk"
+
+      - name: Write release notes
+        run: |
+          sed "s/{{VERSION}}/$VERSION/g" .github/release-notes.md > notes.md
+          if [ -z "$SIGNING_KEY" ]; then
+            printf '\n> **Android update warning:** this build has its own signing key. To install it over an earlier APK, first save a backup in Me → Backup, then uninstall the old app.\n' >> notes.md
+          fi
+          {
+            printf '\n---\nBuilt from commit %s on %s UTC.\n\n```text\n' "$GITHUB_SHA" "$(date -u '+%Y-%m-%d %H:%M')"
+            (cd out && sha256sum *)
+            printf '```\n'
+          } >> notes.md
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="v$VERSION"
+          git tag -f "$TAG"
+          git push -f origin "refs/tags/$TAG"
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            gh release edit "$TAG" --title "Nyanihongo $VERSION" --notes-file notes.md --latest
+          else
+            gh release create "$TAG" --title "Nyanihongo $VERSION" --notes-file notes.md --latest
+          fi
+          gh release upload "$TAG" out/* --clobber
